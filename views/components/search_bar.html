@@ -1,0 +1,9 @@
+<form action="{{ link_search() }}" class="navbar-search-menu" role="search" style="display: none" x-show="navSearch"
+				@click.outside="navSearch = false">
+
+	<input type="search" placeholder="Search" name="{{ website.getMetaValue('search-query-name') ?: 'keywords' }}">
+
+	<button type="submit" class="navbar-search-btn">
+		Search
+	</button>
+</form>

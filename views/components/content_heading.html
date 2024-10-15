@@ -1,0 +1,13 @@
+<div class="heading">
+	{% if link %}
+	<a href="{{ link_to(link) }}">
+		{% endif %}
+		<h1>{{ title }}</h1>
+		{% if link %}
+	</a>
+	{% endif %}
+	<div class="heading-underline">
+		<div class="heading-underline-left"></div>
+		<div class="heading-underline-right"></div>
+	</div>
+</div>

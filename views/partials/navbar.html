@@ -1,0 +1,225 @@
+<!-- NavBar -->
+<nav x-data="{navMobile:false, navSearch:false}">
+	<div class="navbar-container">
+		<div class="navbar-container-top">
+			<div class="navbar-wrapper">
+				<button type="button" class="navbar-mobile-toggle" @click="navMobile = ! navMobile">
+
+					<span class="sr-only">Open main menu</span>
+
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+									class="navbar-mobile-toggle-icon">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+					</svg>
+				</button>
+				<div class="navbar-social-container">
+					<a href="#">
+						<svg class="navbar-social-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+							<path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"></path>
+						</svg>
+					</a>
+					<a href="#">
+						<svg class="navbar-social-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+							<path d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"></path>
+						</svg>
+					</a>
+					<a href="#">
+						<svg class="navbar-social-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 32 32">
+							<path d="M 11.46875 5 C 7.917969 5 5 7.914063 5 11.46875 L 5 20.53125 C 5 24.082031 7.914063 27 11.46875 27 L 20.53125 27 C 24.082031 27 27 24.085938 27 20.53125 L 27 11.46875 C 27 7.917969 24.085938 5 20.53125 5 Z M 11.46875 7 L 20.53125 7 C 23.003906 7 25 8.996094 25 11.46875 L 25 20.53125 C 25 23.003906 23.003906 25 20.53125 25 L 11.46875 25 C 8.996094 25 7 23.003906 7 20.53125 L 7 11.46875 C 7 8.996094 8.996094 7 11.46875 7 Z M 21.90625 9.1875 C 21.402344 9.1875 21 9.589844 21 10.09375 C 21 10.597656 21.402344 11 21.90625 11 C 22.410156 11 22.8125 10.597656 22.8125 10.09375 C 22.8125 9.589844 22.410156 9.1875 21.90625 9.1875 Z M 16 10 C 12.699219 10 10 12.699219 10 16 C 10 19.300781 12.699219 22 16 22 C 19.300781 22 22 19.300781 22 16 C 22 12.699219 19.300781 10 16 10 Z M 16 12 C 18.222656 12 20 13.777344 20 16 C 20 18.222656 18.222656 20 16 20 C 13.777344 20 12 18.222656 12 16 C 12 13.777344 13.777344 12 16 12 Z"></path>
+						</svg>
+					</a>
+					<a href="#">
+						<svg class="navbar-social-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+							<path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
+						</svg>
+					</a>
+				</div>
+				<template x-if="!navSearch">
+					<div>
+						{% set logo = website.getMetaValue('logo') %}
+						{% set siteName = website.getMetaValue('site-name') %}
+
+						<a href="/">
+							{% if logo %}
+							<img class="navbar-logo" alt="{{ siteName }}" src="{{ logo }}">
+							{% else %}
+							<span class="navbar-logo-text">{{ siteName }}</span>
+							{% endif %}
+						</a>
+					</div>
+				</template>
+
+				<div class="navbar-authentication">
+					<button class="navbar-authentication-register">
+						Register
+					</button>
+					<button class="navbar-authentication-login">
+						Login
+					</button>
+				</div>
+				<button class="navbar-mobile-search" @click="navSearch = !navSearch">
+					<template x-if="!navSearch">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="navbar-search-icon">
+							<path fill-rule="evenodd"
+											d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+											clip-rule="evenodd"/>
+						</svg>
+					</template>
+
+				</button>
+				{% include 'components/search_bar.html'%}
+
+			</div>
+		</div>
+
+		<div class="navbar-container-bottom">
+			<div class="navbar-wrapper">
+
+				<div class="navbar-container-bottom-left">
+					{% set mainMenu = menu_solve('main') %}
+					{% for menuItem in mainMenu %}
+					{% if not menuItem.items %}
+					<div class="navbar-dropdown-container">
+
+						<button class="navbar-dropdown-button">
+							<a aria-current="page" href="{{ menuItem.link }}" target="{{ menuItem.new_tab ? '_blank' : '' }}"
+											class="navbar-container-bottom-left-link">
+								{{ menuItem.text }}</a>
+						</button>
+					</div>
+					{% else %}
+					<div class="navbar-dropdown-container" x-data="{ navMenu: false }" @mouseleave="navMenu = false">
+						<button class="navbar-dropdown-button" @click="navMenu = !navMenu" @mouseover="navMenu = true">
+							<a href="{{ menuItem.link }}" class="navbar-container-bottom-left-link"> {{ menuItem.text }}</a>
+
+							<template x-if="!navMenu">
+								<svg class="navbar-dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+									<path fill-rule="evenodd"
+													d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+													clip-rule="evenodd"/>
+								</svg>
+							</template>
+
+							<template x-if="navMenu">
+								<svg class="navbar-dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+									<path fill-rule="evenodd"
+													d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z"
+													clip-rule="evenodd"/>
+								</svg>
+							</template>
+						</button>
+
+						<div x-show="navMenu" style="display: none" @click.outside="navMenu = false" class="navbar-dropdown-menu">
+							{% for subMenuItem in menuItem.items %}
+							<a href="{{ subMenuItem.link }}" target="{{ subMenuItem.new_tab ? '_blank' : '' }}">{{ subMenuItem.text }}</a>
+							{% endfor %}
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+				</div>
+
+				<div class="navbar-container-bottom-right" x-data="{ navSearch: false }">
+					<a href="/cateory.html" class="navbar-container-bottom-left-link">Advertise</a>
+
+					<a href="/cateory.html" class="navbar-container-bottom-left-link">Editorial</a>
+
+					<button class="navbar-search" @click="navSearch = !navSearch">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="navbar-search-icon">
+							<path fill-rule="evenodd"
+											d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+											clip-rule="evenodd"/>
+						</svg>
+
+					</button>
+
+					{% include 'components/search_bar.html'%}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="navbar-mobile-sidebar" x-show="navMobile" style="display: none" role="dialog">
+		<div>
+			<div class="navbar-mobile-sidebar-wrapper">
+				<img src="#" alt="LOGO" class="navbar-logo"
+								onerror="this.style.display='none'; document.getElementById('navbar-logo-text-mobile').style.display='block';">
+
+				<span id="navbar-logo-text-mobile" class="navbar-logo-text" style="display:none;">LOGO</span>
+
+				<button type="button" class="navbar-mobile-toggle" @click="navMobile = ! navMobile">
+
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+									class="navbar-mobile-toggle-icon">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+					</svg>
+				</button>
+			</div>
+
+			<div class="navbar-mobile-sidebar-wrapper">
+				<div class="navbar-mobile-sidebar-user">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="navbar-mobile-sidebar-avatar">
+						<path fill-rule="evenodd"
+										d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+										clip-rule="evenodd"/>
+					</svg>
+					<span>
+                        Name
+                    </span>
+				</div>
+
+				<div class="navbar-mobile-sidebar-authentication">
+					<span class="navbar-mobile-sidebar-link">Logout</span>
+				</div>
+			</div>
+
+			<ul class="navbar-mobile-sidebar-menu">
+				{% for menuItem in mainMenu %}
+				{% if not menuItem.items %}
+				<li class="navbar-mobile-dropdown-container">
+
+					<div class="navbar-mobile-dropdown-button">
+						<a href="{{ menuItem.link }}" class="navbar-container-bottom-left-link">{{ menuItem.text }}</a>
+					</div>
+
+				</li>
+				{% else %}
+				<li class="navbar-mobile-dropdown-container" x-data="{ navMenu: false }">
+
+					<div class="navbar-mobile-dropdown-button" @click="navMenu = !navMenu">
+						<a aria-current="page" href="{{ menuItem.link }}" target="{{ menuItem.new_tab ? '_blank' : '' }}"
+										class="navbar-container-bottom-left-link">{{
+							menuItem.text }}</a>
+
+						<template x-if="!navMenu">
+							<svg class="navbar-dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+								<path fill-rule="evenodd"
+												d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+												clip-rule="evenodd"/>
+							</svg>
+						</template>
+
+						<template x-if="navMenu">
+							<svg class="navbar-dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+								<path fill-rule="evenodd"
+												d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 01-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01.02 1.06z"
+												clip-rule="evenodd"/>
+							</svg>
+						</template>
+					</div>
+
+					<div x-show="navMenu" style="display: none" @click.outside="navMenu = false" class="navbar-mobile-dropdown-menu">
+
+						{% for subMenuItem in menuItem.items %}
+						<a href="{{ subMenuItem.link }}" target="{{ subMenuItem.new_tab ? '_blank' : '' }}">{{ subMenuItem.text }}</a>
+						{% endfor %}
+					</div>
+
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+
+		</div>
+	</div>
+</nav><!-- End Navbar -->

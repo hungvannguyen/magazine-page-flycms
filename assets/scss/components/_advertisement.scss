@@ -1,0 +1,21 @@
+.advertisement {
+  &-container {
+    @apply my-10 hidden max-w-7xl items-center justify-center lg:flex lg:h-[88px] lg:w-[672px] xl:h-[122px] xl:w-[862px];
+
+    &-1 {
+      @apply h-[320px] w-full max-w-7xl items-center justify-center lg:h-[251px] xl:h-[321px];
+    }
+
+    &-2 {
+      @apply mt-12 hidden h-[320px] w-full max-w-7xl items-center justify-center lg:flex lg:h-[695px] xl:h-[851px];
+    }
+
+    &-3 {
+      @apply mt-12 h-[733px] w-full max-w-7xl items-center justify-center xl:h-[733px];
+    }
+  }
+
+  &-content {
+    @apply border-seventh flex h-full w-full items-center justify-center border p-4;
+  }
+}

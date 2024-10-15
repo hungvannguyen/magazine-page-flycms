@@ -1,0 +1,14 @@
+{% extends 'layouts/default.html' %}
+
+{% block content %}
+
+<section>
+	{{websiteCategory}}
+	{% include 'components/breadcrumb.html' with { page:'Category' , title: websiteCategory.title} %}
+
+	{% include 'components/category_content_1.html' %}
+
+	{% include 'components/category_content_2.html' %}
+</section>
+
+{% endblock %}

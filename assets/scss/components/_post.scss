@@ -1,0 +1,105 @@
+.post {
+  &-container {
+    @apply mt-8 flex gap-6;
+  }
+
+  &-content {
+    @apply flex flex-col gap-2;
+
+    p {
+      @apply text-base font-medium text-secondary;
+    }
+
+    h1 {
+      @apply mb-2 mt-4 text-xl font-bold text-secondary;
+    }
+
+    h3 {
+      @apply mb-2 mt-4 text-lg font-bold text-secondary;
+    }
+
+    h4 {
+      @apply mb-2 mt-4 text-base font-bold text-secondary;
+    }
+
+    h5 {
+      @apply mb-2 mt-4 text-base font-semibold text-secondary;
+    }
+
+    blockquote {
+      @apply text-secondary border-third rounded border-l-4 py-2 pl-4 pr-2  font-normal italic md:py-4 text-base;
+    }
+  }
+
+  &-author {
+    @apply my-10 flex items-center gap-6 border-y py-8;
+
+    &-image {
+      @apply h-[110px] w-[110px] shrink-0;
+
+      img {
+        @apply h-full w-full rounded-full object-cover;
+      }
+    }
+
+    &-information {
+      @apply mb-4 flex items-center justify-between gap-1;
+
+      div:first-child {
+        @apply flex flex-col gap-1;
+      }
+    }
+
+    &-name {
+      @apply text-base font-semibold text-secondary underline;
+    }
+
+    &-role {
+      @apply text-seventh text-base font-medium no-underline;
+    }
+
+    &-social {
+      @apply flex gap-2;
+
+      &-icon {
+        @apply size-6 rounded-full bg-secondary fill-current p-1 text-primary;
+      }
+    }
+
+    &-description {
+      @apply text-seventh text-base font-normal;
+    }
+  }
+
+  &-comment {
+    h1 {
+      @apply mb-2 mt-4 text-2xl font-bold text-secondary;
+    }
+
+    h3 {
+      @apply text-seventh mb-2 mt-4 text-base font-normal;
+    }
+
+    textarea {
+      @apply border-thirteenth mt-4 h-48 w-full rounded-md border-2 p-2;
+    }
+
+    &-input {
+      @apply mb-4 grid w-full grid-cols-3 gap-4;
+
+      input {
+        @apply border-thirteenth w-full rounded-md border-2 p-2;
+      }
+    }
+
+    &-checkbox {
+      label {
+        @apply text-seventh text-sm font-normal;
+      }
+    }
+
+    &-submit {
+      @apply text-seventh border-seventh mt-6 rounded-md border px-4 py-2 text-center text-base font-semibold;
+    }
+  }
+}

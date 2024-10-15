@@ -1,0 +1,583 @@
+@import "tailwindcss/base.css";
+@import "tailwindcss/components.css";
+@import "tailwindcss/utilities.css";
+.body {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+}
+
+section {
+  @apply mx-auto;
+}
+section section {
+  @apply px-4 md:px-2 xl:px-0;
+}
+
+.heading {
+  @apply text-fifth mx-auto mb-8 max-w-7xl text-3xl font-bold;
+}
+.heading-1 {
+  @apply mx-auto mb-10 max-w-7xl text-3xl font-bold text-primary;
+}
+.heading-3 {
+  @apply mx-auto mb-6 max-w-7xl text-xl font-bold text-primary;
+}
+.heading-underline {
+  @apply mt-2 flex gap-2;
+}
+.heading-underline-left {
+  @apply h-[5px] w-[47px] bg-third;
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+}
+.heading-underline-right {
+  @apply border-sixth h-[6px] w-full border-y;
+  clip-path: polygon(1% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+nav {
+  @apply bg-secondary;
+}
+
+.navbar-wrapper {
+  @apply container mx-auto flex max-w-7xl items-center justify-between px-8 xl:px-5;
+}
+.navbar-container {
+  @apply text-primary;
+}
+.navbar-container-top {
+  @apply border-b py-6 lg:py-8;
+}
+.navbar-container-bottom {
+  @apply hidden lg:block;
+}
+.navbar-container-bottom-right {
+  @apply relative flex items-center gap-5 py-4;
+}
+.navbar-container-bottom-left {
+  @apply flex items-center justify-around gap-5 py-4;
+}
+.navbar-container-bottom-link {
+  @apply text-sm font-bold text-primary;
+}
+.navbar-social-container {
+  @apply hidden items-center gap-5 lg:flex;
+}
+.navbar-social-icon {
+  @apply size-8 rounded-full bg-primary p-2;
+}
+.navbar-logo {
+  @apply flex h-[36px] w-[86px] items-center gap-2 lg:h-[76px] lg:w-[180px];
+}
+.navbar-logo-text {
+  @apply text-3xl font-bold text-primary lg:text-7xl;
+}
+.navbar-authentication {
+  @apply hidden items-center gap-5 lg:flex;
+}
+.navbar-authentication-register {
+  @apply text-sm font-bold text-primary;
+}
+.navbar-authentication-login {
+  @apply rounded-md bg-third px-4 py-2 text-sm font-bold text-primary brightness-100;
+}
+.navbar-dropdown-container {
+  @apply relative inline-block;
+}
+.navbar-dropdown-button {
+  @apply flex cursor-pointer gap-1 py-4 text-sm font-bold text-primary;
+}
+.navbar-dropdown-icon {
+  @apply size-4;
+}
+.navbar-dropdown-menu {
+  @apply z-20 flex w-full flex-col border border-primary bg-secondary shadow-lg lg:absolute lg:left-1/2 lg:min-w-[160px] lg:-translate-x-1/2 lg:transform lg:rounded-md lg:drop-shadow-md;
+}
+.navbar-dropdown-menu a {
+  @apply flex items-center text-pretty border-b border-primary px-2 py-2 text-xs font-medium text-primary hover:text-third;
+}
+.navbar-search-btn {
+  @apply rounded-md bg-third px-2 text-xs font-bold text-primary brightness-100;
+}
+.navbar-search-icon {
+  @apply size-6;
+}
+.navbar-search-menu {
+  @apply z-20 flex w-full rounded-md bg-secondary px-1 py-2 lg:absolute lg:right-0 lg:top-20 lg:h-[35px] lg:w-[260px];
+}
+.navbar-search-menu input {
+  @apply w-full rounded-l-md bg-secondary px-2 outline-0 focus:outline-none;
+}
+.navbar-mobile-toggle {
+  @apply flex items-center gap-4 lg:hidden;
+}
+.navbar-mobile-toggle-icon {
+  @apply size-6 text-primary;
+}
+.navbar-mobile-search {
+  @apply flex items-center gap-2 lg:hidden;
+}
+.navbar-mobile-sidebar {
+  @apply fixed inset-0 z-50 flex w-[65%] flex-col gap-4 bg-secondary lg:hidden;
+}
+.navbar-mobile-sidebar-wrapper {
+  @apply flex items-center justify-between border-b border-primary px-4 py-4;
+}
+.navbar-mobile-sidebar-user {
+  @apply flex items-center gap-2;
+}
+.navbar-mobile-sidebar-user span {
+  @apply text-xs font-semibold text-primary;
+}
+.navbar-mobile-sidebar-avatar {
+  @apply size-6 rounded-full bg-primary p-1;
+}
+.navbar-mobile-sidebar-authentication {
+  @apply flex items-center gap-2;
+}
+.navbar-mobile-sidebar-authentication span {
+  @apply text-xs font-semibold text-primary;
+}
+.navbar-mobile-sidebar-menu {
+  @apply first:mt-2;
+}
+.navbar-mobile-sidebar-menu li {
+  @apply border-b border-primary;
+}
+.navbar-mobile-dropdown-button {
+  @apply flex cursor-pointer justify-between p-4 text-sm font-bold text-primary;
+}
+.navbar-mobile-dropdown-menu {
+  @apply mr-1 flex flex-col border border-b-0 border-primary;
+}
+.navbar-mobile-dropdown-menu a {
+  @apply flex items-center px-4 py-2 text-xs font-medium text-primary hover:text-third;
+}
+
+footer {
+  @apply bg-fifth mt-16;
+}
+
+.footer-container {
+  @apply mt-10 mx-4 lg:mx-auto border-b border-primary;
+}
+.footer-top {
+  @apply grid max-w-7xl mx-auto grid-cols-2 gap-10 py-10 lg:grid-cols-6 lg:gap-16;
+}
+.footer-bottom {
+  @apply max-w-7xl mx-auto flex flex-col gap-4 py-4 lg:flex-row lg:justify-between lg:items-center lg:py-6;
+}
+.footer-bottom span {
+  @apply text-twelfth text-sm;
+}
+.footer-info {
+  @apply col-span-2 flex flex-col gap-4;
+}
+.footer-info span {
+  @apply text-primary;
+}
+.footer-logo {
+  @apply flex h-[48px] w-[115px] items-center gap-2 lg:h-[54px] lg:w-[129px];
+}
+.footer-logo-text {
+  @apply text-primary text-4xl font-bold lg:text-5xl;
+}
+.footer-group {
+  @apply flex flex-col gap-4;
+}
+.footer-group li {
+  @apply text-fourth text-sm font-medium;
+}
+
+.card-container {
+  @apply mt-10 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3;
+}
+.card-container-1 {
+  @apply grid grid-cols-1 gap-8 lg:gap-4 lg:grid-cols-2;
+}
+.card-container-2 {
+  @apply grid grid-cols-1 gap-4;
+}
+.card-container-3 {
+  @apply grid grid-cols-1 gap-4 lg:grid-cols-3;
+}
+.card-container-4 {
+  @apply bg-eighth mt-10 py-16;
+}
+.card-container-4 div {
+  @apply mx-0 max-w-7xl lg:mx-auto;
+}
+.card-container-5 {
+  @apply grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-20;
+}
+.card-wrapper {
+  @apply relative isolate flex flex-col justify-end overflow-hidden rounded-md px-8 pb-2;
+}
+.card-wrapper-1 {
+  @apply flex gap-4;
+}
+.card-wrapper-2 {
+  @apply w-full flex flex-col gap-4;
+}
+.card-wrapper-3 {
+  @apply flex flex-col gap-4 lg:flex-row;
+}
+.card-size {
+  @apply h-[389px] max-h-[389px];
+}
+.card-size-1 {
+  @apply h-[259px] max-h-[259px];
+}
+.card-size-2 {
+  @apply h-[516px] max-h-[516px] lg:h-[404px] lg:max-h-[404px] xl:h-[516px] xl:max-h-[516px];
+}
+.card-size-3 {
+  @apply h-[241px] max-h-[241px] lg:h-[188px] lg:max-h-[188px] xl:h-[241px] xl:max-h-[241px];
+}
+.card-size-4 {
+  @apply h-[241px] max-h-[241px] lg:h-[191px] lg:max-h-[191px] xl:h-[244px] xl:max-h-[244px];
+}
+.card-size-5 {
+  @apply h-[561px] max-h-[561px] lg:h-[444px] lg:max-h-[444px] xl:h-[586px] xl:max-h-[586px];
+}
+.card-size-6 {
+  @apply h-[175px] max-h-[175px] lg:h-[119px] lg:max-h-[119px] xl:h-[180px] xl:max-h-[180px];
+}
+.card-linear {
+  @apply absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20;
+}
+.card-image {
+  @apply absolute inset-0 h-full w-full object-cover;
+}
+.card-image-1 {
+  @apply h-[133px] max-h-[133px] w-[133px] max-w-[133px] shrink-0 rounded-md object-cover;
+}
+.card-image-2 {
+  @apply h-[160px] max-h-[160px] w-[160px] max-w-[160px] shrink-0 rounded-md object-cover lg:h-[125px] lg:max-h-[125px] lg:w-[125px] lg:max-w-[125px] xl:h-[160px] xl:max-h-[160px] xl:w-[160px] xl:max-w-[160px];
+}
+.card-image-3 {
+  @apply h-[271px] max-h-[271px] w-full rounded-md object-cover lg:h-[214px] lg:max-h-[214px] xl:h-[271px] xl:max-h-[271px];
+}
+.card-image-4 {
+  @apply h-[271px] max-h-[271px] w-full shrink-0 rounded-md object-cover lg:h-[125px] lg:max-h-[125px] lg:w-[125px] lg:max-w-[125px] xl:h-[130px] xl:max-h-[130px] xl:w-[214px] xl:max-w-[214px];
+}
+.card-image-5 {
+  @apply h-[210px] max-h-[210px] w-full shrink-0 rounded-md object-cover lg:h-[167px] lg:max-h-[167px] lg:w-[243px] lg:max-w-[243px] xl:h-[210px] xl:max-h-[210px] xl:w-[306px] xl:max-w-[306px];
+}
+.card-content {
+  @apply w-full z-10 flex flex-col gap-4 pb-2;
+}
+.card-content-1 {
+  @apply flex flex-col gap-3 py-2 justify-between;
+}
+.card-content-2 {
+  @apply flex flex-col gap-2;
+}
+.card-content-3 {
+  @apply flex flex-col gap-2 py-2;
+}
+.card-title {
+  @apply text-primary line-clamp-2 text-3xl font-semibold;
+}
+.card-title-1 {
+  @apply text-primary line-clamp-2 text-xl font-semibold;
+}
+.card-title-2 {
+  @apply text-fifth line-clamp-2 text-base font-bold;
+}
+.card-title-3 {
+  @apply text-secondary line-clamp-2 text-xl font-semibold;
+}
+.card-title-4 {
+  @apply text-primary line-clamp-2 text-sm font-semibold;
+}
+.card-title-6 {
+  @apply text-primary line-clamp-2 text-3xl font-bold lg:text-base;
+}
+.card-title-7 {
+  @apply text-primary line-clamp-2 text-base font-bold;
+}
+.card-description {
+  @apply text-seventh line-clamp-3 text-xs font-medium;
+}
+.card-description-1 {
+  @apply text-seventh line-clamp-3 text-sm lg:text-xs font-medium;
+}
+.card-tag {
+  @apply text-primary bg-third z-10 h-[29px] w-auto max-w-fit rounded-md px-2 py-1 text-center text-sm font-semibold;
+}
+.card-tag-1 {
+  @apply text-primary bg-third flex h-[30px] w-auto max-w-fit items-center justify-center rounded-md px-1 py-1 text-base font-semibold;
+}
+.card-tag-2 {
+  @apply text-primary bg-third h-[25px] w-auto max-w-fit rounded-md px-2 py-1 text-center  text-xs font-semibold;
+}
+.card-info {
+  @apply flex flex-wrap items-center gap-2;
+}
+.card-info-tag {
+  @apply text-fourth text-xs font-medium;
+}
+.card-date {
+  @apply flex gap-2 items-center text-fourth text-xs font-medium;
+}
+.card-date-icon {
+  @apply text-fourth size-6;
+}
+.card-btn {
+  @apply my-8 flex flex-col items-center justify-center;
+}
+.card-btn button {
+  @apply text-seventh rounded-md px-4 py-2 border border-seventh text-center text-base font-semibold;
+}
+.card-share {
+  @apply flex gap-4 items-center;
+}
+.card-share-1 {
+  @apply flex flex-col gap-4 items-center;
+}
+.card-share-1 span {
+  @apply text-seventh text-xl font-medium;
+}
+.card-share-icon {
+  @apply size-4 bg-fourth rounded-full p-1;
+}
+.card-share-icon-1 {
+  @apply size-8 bg-seventh rounded-full p-2 text-primary fill-current;
+}
+.card-share-btn {
+  @apply size-4 text-fourth;
+}
+.card-share-btn-1 {
+  @apply size-6 text-seventh;
+}
+.card-share span {
+  @apply text-fourth text-xs font-medium;
+}
+
+.divider {
+  @apply bg-tenth hidden w-px lg:block;
+}
+
+.number-badge {
+  @apply text-third absolute bottom-0 right-0 flex h-[40px] w-[40px] items-center justify-center rounded-tl-md bg-white p-2 text-3xl font-bold;
+}
+
+.video-thumbnail {
+  @apply relative inline-block;
+}
+
+.play-button {
+  @apply bg-ninth text-primary flex size-12 cursor-pointer items-center justify-center rounded-full p-3 hover:animate-bounce;
+}
+.play-button-container {
+  @apply absolute inset-0 flex items-center justify-center;
+}
+
+.social-container {
+  @apply grid grid-cols-1 gap-4 lg:grid-cols-2;
+}
+.social-item {
+  @apply flex gap-4 items-center border border-eleventh rounded-md p-4;
+}
+.social-item span {
+  @apply text-secondary text-base font-medium;
+}
+.social-icon {
+  @apply size-6;
+}
+
+.advertisement-container {
+  @apply my-10 hidden max-w-7xl items-center justify-center lg:flex lg:h-[88px] lg:w-[672px] xl:h-[122px] xl:w-[862px];
+}
+.advertisement-container-1 {
+  @apply h-[320px] w-full max-w-7xl items-center justify-center lg:h-[251px] xl:h-[321px];
+}
+.advertisement-container-2 {
+  @apply mt-12 hidden h-[320px] w-full max-w-7xl items-center justify-center lg:flex lg:h-[695px] xl:h-[851px];
+}
+.advertisement-container-3 {
+  @apply mt-12 h-[733px] w-full max-w-7xl items-center justify-center xl:h-[733px];
+}
+.advertisement-content {
+  @apply border-seventh flex h-full w-full items-center justify-center border p-4;
+}
+
+.email-container {
+  @apply bg-fifth mt-16;
+}
+.email-wrapper {
+  @apply mx-auto flex max-w-7xl gap-4;
+}
+.email-content {
+  @apply flex flex-col gap-4 p-8;
+}
+.email-special {
+  @apply text-third;
+}
+.email-title {
+  @apply text-primary text-5xl font-bold italic;
+}
+.email-highlight {
+  @apply text-primary text-3xl font-bold italic;
+}
+.email-features {
+  @apply flex flex-col gap-4;
+}
+.email-features li {
+  @apply text-primary flex items-center gap-2 text-sm;
+}
+.email-icon {
+  @apply text-third size-6;
+}
+.email-offer {
+  @apply text-primary text-sm font-normal;
+}
+.email-form label {
+  @apply text-primary text-xs font-semibold;
+}
+.email-submit {
+  @apply my-4 flex gap-4;
+}
+.email-submit-button {
+  @apply text-primary bg-third w-1/2 rounded-md py-2 text-sm font-semibold;
+}
+.email-input {
+  @apply border-third w-full rounded-md border p-2;
+}
+.email-image {
+  @apply before:from-fifth after:to-fifth relative hidden w-[612px]
+    overflow-hidden before:absolute before:inset-0 before:h-1/2 before:bg-gradient-to-b before:to-transparent
+
+    after:absolute after:inset-x-0 after:bottom-0 after:h-1/2 after:bg-gradient-to-b after:from-transparent lg:flex;
+}
+
+.breadcrumb-container {
+  @apply mx-auto my-10 max-w-7xl px-4 xl:px-0;
+}
+.breadcrumb-container ol {
+  @apply flex flex-wrap;
+}
+.breadcrumb-container ol li {
+  @apply text-fifth after:text-fifth text-sm font-semibold after:mx-2 after:content-[">"] last:text-third after:last:content-none;
+}
+
+.post-container {
+  @apply mt-8 flex gap-6;
+}
+.post-content {
+  @apply flex flex-col gap-2;
+}
+.post-content p {
+  @apply text-base font-medium text-secondary;
+}
+.post-content h1 {
+  @apply mb-2 mt-4 text-xl font-bold text-secondary;
+}
+.post-content h3 {
+  @apply mb-2 mt-4 text-lg font-bold text-secondary;
+}
+.post-content h4 {
+  @apply mb-2 mt-4 text-base font-bold text-secondary;
+}
+.post-content h5 {
+  @apply mb-2 mt-4 text-base font-semibold text-secondary;
+}
+.post-content blockquote {
+  @apply text-secondary border-third rounded border-l-4 py-2 pl-4 pr-2  font-normal italic md:py-4 text-base;
+}
+.post-author {
+  @apply my-10 flex items-center gap-6 border-y py-8;
+}
+.post-author-image {
+  @apply h-[110px] w-[110px] shrink-0;
+}
+.post-author-image img {
+  @apply h-full w-full rounded-full object-cover;
+}
+.post-author-information {
+  @apply mb-4 flex items-center justify-between gap-1;
+}
+.post-author-information div:first-child {
+  @apply flex flex-col gap-1;
+}
+.post-author-name {
+  @apply text-base font-semibold text-secondary underline;
+}
+.post-author-role {
+  @apply text-seventh text-base font-medium no-underline;
+}
+.post-author-social {
+  @apply flex gap-2;
+}
+.post-author-social-icon {
+  @apply size-6 rounded-full bg-secondary fill-current p-1 text-primary;
+}
+.post-author-description {
+  @apply text-seventh text-base font-normal;
+}
+.post-comment h1 {
+  @apply mb-2 mt-4 text-2xl font-bold text-secondary;
+}
+.post-comment h3 {
+  @apply text-seventh mb-2 mt-4 text-base font-normal;
+}
+.post-comment textarea {
+  @apply border-thirteenth mt-4 h-48 w-full rounded-md border-2 p-2;
+}
+.post-comment-input {
+  @apply mb-4 grid w-full grid-cols-3 gap-4;
+}
+.post-comment-input input {
+  @apply border-thirteenth w-full rounded-md border-2 p-2;
+}
+.post-comment-checkbox label {
+  @apply text-seventh text-sm font-normal;
+}
+.post-comment-submit {
+  @apply text-seventh border-seventh mt-6 rounded-md border px-4 py-2 text-center text-base font-semibold;
+}
+
+.authenticate-container {
+  @apply bg-eighth flex h-screen items-center justify-center bg-cover bg-center;
+}
+.authenticate-form-box {
+  @apply w-full max-w-md rounded-lg border bg-secondary p-10 text-center text-primary shadow-lg;
+}
+.authenticate-logo {
+  @apply mb-5 text-6xl font-bold text-primary;
+}
+.authenticate-title {
+  @apply mb-2 text-xl font-bold;
+}
+.authenticate-subtitle {
+  @apply text-fourteenth mb-6 text-base font-normal;
+}
+.authenticate-input-box {
+  @apply mb-4 flex items-center rounded-md bg-primary p-3;
+}
+.authenticate-input-box input {
+  @apply text-fourteenth ml-2 w-full border-none bg-transparent focus:outline-none;
+}
+.authenticate-icon {
+  @apply text-fourteenth size-6 fill-current;
+}
+.authenticate-checkbox-box {
+  @apply mb-4 flex items-center justify-between;
+}
+.authenticate-checkbox-box label {
+  @apply ml-2 text-gray-400;
+}
+.authenticate-btn {
+  @apply hover:bg-ninth w-full cursor-pointer rounded-md bg-third py-3 text-white;
+}
+.authenticate-terms {
+  @apply mt-6 text-xs text-primary;
+}
+.authenticate-login-link {
+  @apply mt-4 block text-third hover:underline;
+}
+.authenticate-text-hightlight {
+  @apply text-third;
+}
+
+/*# sourceMappingURL=style.css.map */

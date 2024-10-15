@@ -1,0 +1,43 @@
+<section class="card-container">
+	{% for id in ids %}
+
+	{% set tagIds = tag_data_list[id]['ids']|join(', ') %}{% set querySection =
+	multikey_filter_post_query().setFilterKeys([tagIds]).where('visibility', '=',
+	'public').setFilterKeyMatchingType('all').sortBy('created_at').setLimit(9).sortDesc()%}
+
+	{% set categoriesData = multikey_filter_get_posts(querySection) %}
+
+	{% if categoriesData is not empty %}
+
+	{% set catrs = website_category_find_by_id(tagIds) %}
+
+	{% if id == 2 %}
+	<div class="col-span-2 flex flex-col gap-10">
+		<div>
+			{% include 'components/content_heading.html' with { title: tag_data_list[id]['tag_name'] }%}
+
+			<div class="card-container-2">
+				<div class="card-container-1">
+					{% include 'components/list_resource.html' with { resources: categoriesData|slice(0,2), resources_card: 'resources_card_5' } %}
+				</div>
+
+				<div class="card-container-3">
+					{% include 'components/list_resource.html' with { resources: categoriesData|slice(2,3), resources_card: 'resources_card_6' } %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+	{% if id == 3 %}
+	<div>
+		{% include 'components/content_heading.html' with { title: tag_data_list[id]['tag_name'] }%}
+
+		<div class="card-container-2">
+
+			{% include 'components/list_resource.html' with { resources: categoriesData|slice(0,3), resources_card: 'resources_card_4' } %}
+		</div>
+	</div>
+	{% endif %}
+	{% endif %}
+	{% endfor %}
+</section>

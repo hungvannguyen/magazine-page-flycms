@@ -1,0 +1,23 @@
+{% extends 'layouts/default.html' %}
+
+{% block content %}
+
+{% set data = website.getMetaValue('home-sections') %}
+
+{% set tags = data|split(',') %}{% set tag_data_list = [] %}
+
+{% set previous_tag_name = '' %}
+
+{% for tag in tags %}
+
+{% set parts = tag|split(':') %}{% set tag_name = (parts|length > 1) ? parts[0]|trim : previous_tag_name %}
+
+{% set ids = parts[parts|length > 1 ? 1 : 0]|trim|split(' ') %}{% set previous_tag_name = tag_name %}
+
+{% set tag_data_list = tag_data_list|merge([{'tag_name': tag_name, 'ids': ids}]) %}
+
+{% endfor %}
+
+{% include 'components/home_content_sections.html' with { tag_data_list: tag_data_list, listData: post_list(), count: listData.getResourcesCount()} %}
+
+{% endblock %}

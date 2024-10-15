@@ -1,0 +1,167 @@
+nav {
+    @apply bg-secondary;
+}
+
+.navbar {
+    &-wrapper {
+        @apply container mx-auto flex max-w-7xl items-center justify-between px-8 xl:px-5;
+    }
+
+    &-container {
+        @apply text-primary;
+
+        &-top {
+            @apply border-b py-6 lg:py-8;
+        }
+
+        &-bottom {
+            @apply hidden lg:block;
+
+            &-right {
+                @apply relative flex items-center gap-5 py-4;
+            }
+
+            &-left {
+                @apply flex items-center justify-around gap-5 py-4;
+            }
+
+            &-link {
+                @apply text-sm font-bold text-primary;
+            }
+        }
+    }
+
+    &-social {
+        &-container {
+            @apply hidden items-center gap-5 lg:flex;
+        }
+
+        &-icon {
+            @apply size-8 rounded-full bg-primary p-2;
+        }
+    }
+
+    &-logo {
+        @apply flex h-[36px] w-[86px] items-center gap-2 lg:h-[76px] lg:w-[180px];
+
+        &-text {
+            @apply text-3xl font-bold text-primary lg:text-7xl;
+        }
+    }
+
+    &-authentication {
+        @apply hidden items-center gap-5 lg:flex;
+
+        &-register {
+            @apply text-sm font-bold text-primary;
+        }
+
+        &-login {
+            @apply rounded-md bg-third px-4 py-2 text-sm font-bold text-primary brightness-100;
+        }
+    }
+
+    &-dropdown {
+        &-container {
+            @apply relative inline-block;
+        }
+
+        &-button {
+            @apply flex cursor-pointer gap-1 py-4 text-sm font-bold text-primary;
+        }
+
+        &-icon {
+            @apply size-4;
+        }
+
+        &-menu {
+            @apply z-20 flex w-full flex-col border border-primary bg-secondary shadow-lg lg:absolute lg:left-1/2 lg:min-w-[160px] lg:-translate-x-1/2 lg:transform lg:rounded-md lg:drop-shadow-md;
+
+            a {
+                @apply flex items-center text-pretty border-b border-primary px-2 py-2 text-xs font-medium text-primary hover:text-third;
+            }
+        }
+    }
+
+    &-search {
+        &-btn {
+            @apply rounded-md bg-third px-2 text-xs font-bold text-primary brightness-100;
+        }
+
+        &-icon {
+            @apply size-6;
+        }
+
+        &-menu {
+            @apply z-20 flex w-full rounded-md bg-secondary px-1 py-2 lg:absolute lg:right-0 lg:top-20 lg:h-[35px] lg:w-[260px];
+
+            input {
+                @apply w-full rounded-l-md bg-secondary px-2 outline-0 focus:outline-none;
+            }
+        }
+    }
+
+    &-mobile {
+        &-toggle {
+            @apply flex items-center gap-4 lg:hidden;
+
+            &-icon {
+                @apply size-6 text-primary;
+            }
+        }
+
+        &-search {
+            @apply flex items-center gap-2 lg:hidden;
+        }
+
+        &-sidebar {
+            @apply fixed inset-0 z-50 flex w-[65%] flex-col gap-4 bg-secondary lg:hidden;
+
+            &-wrapper {
+                @apply flex items-center justify-between border-b border-primary px-4 py-4;
+            }
+
+            &-user {
+                @apply flex items-center gap-2;
+
+                span {
+                    @apply text-xs font-semibold text-primary;
+                }
+            }
+
+            &-avatar {
+                @apply size-6 rounded-full bg-primary p-1;
+            }
+
+            &-authentication {
+                @apply flex items-center gap-2;
+
+                span {
+                    @apply text-xs font-semibold text-primary;
+                }
+            }
+
+            &-menu {
+                @apply first:mt-2;
+
+                li {
+                    @apply border-b border-primary;
+                }
+            }
+        }
+
+        &-dropdown {
+            &-button {
+                @apply flex cursor-pointer justify-between p-4 text-sm font-bold text-primary;
+            }
+
+            &-menu {
+                @apply mr-1 flex flex-col border border-b-0 border-primary;
+
+                a {
+                    @apply flex items-center px-4 py-2 text-xs font-medium text-primary hover:text-third;
+                }
+            }
+        }
+    }
+}

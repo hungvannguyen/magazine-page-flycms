@@ -1,0 +1,69 @@
+<!-- Footer -->
+<footer>
+	<div class="footer-container">
+		<div class="footer-top">
+			<div class="footer-info">
+				<div>
+
+					{% set logo = website.getMetaValue('logo') %}
+					{% set siteName = website.getMetaValue('site-name') %}
+
+					<a href="/">
+						{% if logo %}
+						<img class="footer-logo" alt="{{ siteName }}" src="{{ logo }}">
+						{% else %}
+						<span class="footer-logo-text">{{ siteName }}</span>
+						{% endif %}
+					</a>
+				</div>
+				{% set footerText = website.getMetaValue('footer-text') %}
+				<span>
+					{% if footerText %}
+						{{ footerText | raw }}
+					{% else %}
+							This is the default footer text, to change this text, create a website meta with key "footer-text".
+					{% endif %}</span>
+
+			</div>
+
+			{% set footerMenu = menu_solve('footer') %}
+			{% for menuItem in footerMenu %}
+			{% if not menuItem.items %}
+			<div>
+				<div class="heading-3">
+					<a href="{{ menuItem.link }}" target="{{ menuItem.new_tab ? '_blank' : '' }}">
+						<h1>{{ menuItem.text }}</h1>
+					</a>
+					<div class="heading-underline">
+						<div class="heading-underline-left"></div>
+					</div>
+				</div>
+			</div>
+			{% else %}
+			<div>
+				<div class="heading-3">
+					<a href="{{ menuItem.link }}" target="{{ menuItem.new_tab ? '_blank' : '' }}">
+						<h1>{{ menuItem.text }}</h1>
+					</a>
+					<div class="heading-underline">
+						<div class="heading-underline-left"></div>
+					</div>
+				</div>
+
+				<ul class="footer-group">
+					{% for subMenuItem in menuItem.items %}
+					<li><a href="{{ subMenuItem.link }}">{{ subMenuItem.text }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		<div class="footer-bottom">
+			<span>Privacy Policy & Terms  * Site Credits</span>
+			<span>© {{ date('Y') }} <a class="text-white" href="{{ url('/') }}">{{ website.getMetaValue('site-name') }}</a>. All Rights Reserved.</span>
+		</div>
+	</div>
+
+</footer><!-- End of Footer -->

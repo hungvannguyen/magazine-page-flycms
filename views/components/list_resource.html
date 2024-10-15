@@ -1,0 +1,9 @@
+{% if resources %}
+
+{% for resource in resources %}
+
+{% include 'components/' ~ resources_card ~ '.html' with { resource: resource, index: loop.index } %}
+
+{% endfor %}
+
+{% endif %}

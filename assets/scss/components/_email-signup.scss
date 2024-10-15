@@ -1,0 +1,66 @@
+.email {
+  &-container {
+    @apply bg-fifth mt-16;
+  }
+
+  &-wrapper {
+    @apply mx-auto flex max-w-7xl gap-4;
+  }
+
+  &-content {
+    @apply flex flex-col gap-4 p-8;
+  }
+
+  &-special {
+    @apply text-third;
+  }
+
+  &-title {
+    @apply text-primary text-5xl font-bold italic;
+  }
+
+  &-highlight {
+    @apply text-primary text-3xl font-bold italic;
+  }
+
+  &-features {
+    @apply flex flex-col gap-4;
+
+    li {
+      @apply text-primary flex items-center gap-2 text-sm;
+    }
+  }
+
+  &-icon {
+    @apply text-third size-6;
+  }
+
+  &-offer {
+    @apply text-primary text-sm font-normal;
+  }
+
+  &-form {
+    label {
+      @apply text-primary text-xs font-semibold;
+    }
+  }
+
+  &-submit {
+    @apply my-4 flex gap-4;
+
+    &-button {
+      @apply text-primary bg-third w-1/2 rounded-md py-2 text-sm font-semibold;
+    }
+  }
+
+  &-input {
+    @apply border-third w-full rounded-md border p-2;
+  }
+
+  &-image {
+    @apply before:from-fifth after:to-fifth relative hidden w-[612px]
+    overflow-hidden before:absolute before:inset-0 before:h-1/2 before:bg-gradient-to-b before:to-transparent
+
+    after:absolute after:inset-x-0 after:bottom-0 after:h-1/2 after:bg-gradient-to-b after:from-transparent lg:flex;
+  }
+}

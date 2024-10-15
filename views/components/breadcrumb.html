@@ -1,0 +1,13 @@
+<div class="breadcrumb-container">
+	<ol>
+		<li><a href="/">Home</a></li>
+		<li>
+			{% if link %}
+			<a href="{{ link }}">{{ page }}</a>
+			{% else %}
+			<span>{{ page }}</span>
+			{% endif %}
+		</li>
+		<li><span>{{ title }}</span></li>
+	</ol>
+</div>

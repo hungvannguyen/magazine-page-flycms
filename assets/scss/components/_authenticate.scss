@@ -1,0 +1,57 @@
+.authenticate {
+    &-container {
+        @apply bg-eighth flex h-screen items-center justify-center bg-cover bg-center;
+    }
+
+    &-form-box {
+        @apply w-full max-w-md rounded-lg border bg-secondary p-10 text-center text-primary shadow-lg;
+    }
+
+    &-logo {
+        @apply mb-5 text-6xl font-bold text-primary;
+    }
+
+    &-title {
+        @apply mb-2 text-xl font-bold;
+    }
+
+    &-subtitle {
+        @apply text-fourteenth mb-6 text-base font-normal;
+    }
+
+    &-input-box {
+        @apply mb-4 flex items-center rounded-md bg-primary p-3;
+
+        input {
+            @apply text-fourteenth ml-2 w-full border-none bg-transparent focus:outline-none;
+        }
+    }
+
+    &-icon {
+        @apply text-fourteenth size-6 fill-current;
+    }
+
+    &-checkbox-box {
+        @apply mb-4 flex items-center justify-between;
+
+        label {
+            @apply ml-2 text-gray-400;
+        }
+    }
+
+    &-btn {
+        @apply hover:bg-ninth w-full cursor-pointer rounded-md bg-third py-3 text-white;
+    }
+
+    &-terms {
+        @apply mt-6 text-xs text-primary;
+    }
+
+    &-login-link {
+        @apply mt-4 block text-third hover:underline;
+    }
+
+    &-text-hightlight {
+        @apply text-third;
+    }
+}

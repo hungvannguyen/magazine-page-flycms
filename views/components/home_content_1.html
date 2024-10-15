@@ -1,0 +1,101 @@
+<section class="card-container">
+
+	<div class="col-span-2 flex flex-col gap-4">
+		<div class="card-wrapper card-size">
+			<a href="/post.html">
+				<img class="card-image"
+								src="https://images.pexels.com/photos/8919521/pexels-photo-8919521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								alt="Image">
+			</a>
+			<div class="card-linear"></div>
+			<div class="card-content">
+				<p class="card-tag">New</p>
+
+				<a href="/post.html">
+					<p class="card-title">IaaS: Powering the Future of Cloud Computing</p>
+				</a>
+
+				<p class="card-info">
+					<span class="card-info-tag"> Tag 1</span>
+					<span class="card-info-tag"> Tag 1</span>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-date-icon">
+						<path fill-rule="evenodd"
+										d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+										clip-rule="evenodd"/>
+					</svg>
+					<span class="card-date">28 June 2024</span>
+				</p>
+			</div>
+		</div>
+
+		<div class="card-container-1">
+			<div class="card-wrapper card-size-1">
+				<a href="/post.html">
+					<img class="card-image"
+									src="https://images.pexels.com/photos/8919521/pexels-photo-8919521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+									alt="Image">
+				</a>
+				<div class="card-linear"></div>
+				<div class="card-content">
+					<p class="card-tag">New</p>
+
+					<a href="/post.html">
+						<p class="card-title-1">5G, AI and Telecoms: Advancing Connectivity for the Future</p>
+					</a>
+
+					<p class="card-info">
+						<span class="card-info-tag"> Tag 1</span>
+						<span class="card-info-tag"> Tag 1</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-date-icon">
+							<path fill-rule="evenodd"
+											d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+											clip-rule="evenodd"/>
+						</svg>
+						<span class="card-date">28 June 2024</span>
+					</p>
+				</div>
+			</div>
+
+			<div class="card-wrapper card-size-1">
+				<a href="/post.html">
+					<img class="card-image"
+									src="https://images.pexels.com/photos/8919521/pexels-photo-8919521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+									alt="Image">
+				</a>
+				<div class="card-linear"></div>
+				<div class="card-content">
+					<p class="card-tag">New</p>
+
+					<a href="/post.html">
+						<p class="card-title-1">5G, AI and Telecoms: Advancing Connectivity for the Future</p>
+					</a>
+
+					<p class="card-info">
+						<span class="card-info-tag"> Tag 1</span>
+						<span class="card-info-tag"> Tag 1</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-date-icon">
+							<path fill-rule="evenodd"
+											d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+											clip-rule="evenodd"/>
+						</svg>
+						<span class="card-date">28 June 2024</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		{% include 'components/content_heading.html' with { title: "Most view" } %}
+
+		<div class="card-container-2">
+
+			{%set query = multikey_filter_post_query().where('visibility', '=',
+			'public').setFilterKeyMatchingType('all').sortBy('views').sortDesc().setLimit(24)%}
+
+			{% set posts = multikey_filter_get_posts(query) %}
+
+			{% include 'components/list_resource.html' with { resources: posts|slice(0,4), resources_card: 'resources_card_3' } %}
+		</div>
+	</div>
+</section>

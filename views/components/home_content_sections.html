@@ -1,0 +1,13 @@
+{% if tag_data_list %}
+
+{% include 'components/home_content_1.html' %}
+
+{% include 'components/home_content_2.html' with { ids: [0,1] } %}
+
+{% include 'components/email_subscription_section.html' %}
+
+{% include 'components/home_content_3.html' with { ids: [2,3] } %}
+
+{% include 'components/home_content_4.html' %}
+
+{% endif %}
