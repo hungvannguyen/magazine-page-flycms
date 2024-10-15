@@ -1,0 +1,41 @@
+.pagination {
+  &-container {
+    @apply border-none  z-10 mx-auto mt-8 flex flex-col justify-center gap-4 border p-6 sm:flex-row sm:justify-between;
+  }
+
+  &-navigation {
+    @apply mx-auto flex content-center justify-center gap-6;
+  }
+
+  &-button {
+    @apply flex cursor-pointer items-center justify-center;
+  }
+
+  &-icon {
+    @apply h-6 w-6;
+
+    &-container {
+      @apply text-secondary my-auto flex justify-center;
+    }
+  }
+
+  &-input {
+    @apply text-secondary flex content-center justify-center gap-4;
+  }
+
+  &-item {
+    @apply text-secondary hover:bg-quinary hover:text-primary dark:bg-primary dark:hover:bg-quinary dark:hover:text-primary flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium;
+
+    &-active {
+      @apply bg-secondary text-primary dark:bg-senary dark:text-secondary;
+    }
+  }
+
+  &-page_input {
+    @apply h-6 w-14;
+  }
+
+  &-info {
+    @apply text-secondary my-auto hidden sm:block;
+  }
+}

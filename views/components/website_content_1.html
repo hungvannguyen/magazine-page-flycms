@@ -1,8 +1,8 @@
-{%set query = multikey_filter_post_query().where('visibility', '=', 'public').setFilterKeys([websiteCategoryId]).setFilterKeyMatchingType('all').sortBy('views').sortDesc().setLimit(4)%}
+{%set query = multikey_filter_post_query().where('visibility', '=', 'public').setFilterKeys([data.id]).setFilterKeyMatchingType('all').sortBy('views').sortDesc().setLimit(4)%}
 
 {% set posts = multikey_filter_get_posts(query) %}
 
-{% include 'components/content_heading.html' with { title: "Most View In " ~ websiteCategory.title } %}
+{% include 'components/content_heading.html' with { title: "Most View In " ~ title } %}
 <section class="card-container">
 
 	{% set firstPost = posts|first %}

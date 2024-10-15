@@ -1,6 +1,6 @@
 .card {
   &-container {
-    @apply mt-10 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3;
+    @apply mt-10 grid max-w-7xl grid-cols-1 space-y-4 lg:gap-8 lg:space-y-0 lg:grid-cols-3;
 
     &-1 {
       @apply grid grid-cols-1 gap-8 lg:gap-4 lg:grid-cols-2;
@@ -28,7 +28,7 @@
   }
 
   &-wrapper {
-    @apply relative isolate flex flex-col justify-end overflow-hidden rounded-md px-8 pb-2;
+    @apply relative isolate flex flex-col justify-end overflow-hidden rounded-md px-2 lg:px-4 pb-2;
 
     &-1 {
       @apply flex gap-4;
@@ -67,7 +67,7 @@
     }
 
     &-6 {
-      @apply h-[175px] max-h-[175px] lg:h-[119px] lg:max-h-[119px] xl:h-[180px] xl:max-h-[180px];
+      @apply w-full h-full;
     }
   }
 

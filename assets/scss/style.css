@@ -189,7 +189,7 @@ footer {
 }
 
 .card-container {
-  @apply mt-10 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3;
+  @apply mt-10 grid max-w-7xl grid-cols-1 space-y-4 lg:gap-8 lg:space-y-0 lg:grid-cols-3;
 }
 .card-container-1 {
   @apply grid grid-cols-1 gap-8 lg:gap-4 lg:grid-cols-2;
@@ -210,7 +210,7 @@ footer {
   @apply grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-20;
 }
 .card-wrapper {
-  @apply relative isolate flex flex-col justify-end overflow-hidden rounded-md px-8 pb-2;
+  @apply relative isolate flex flex-col justify-end overflow-hidden rounded-md px-2 lg:px-4 pb-2;
 }
 .card-wrapper-1 {
   @apply flex gap-4;
@@ -240,7 +240,7 @@ footer {
   @apply h-[561px] max-h-[561px] lg:h-[444px] lg:max-h-[444px] xl:h-[586px] xl:max-h-[586px];
 }
 .card-size-6 {
-  @apply h-[175px] max-h-[175px] lg:h-[119px] lg:max-h-[119px] xl:h-[180px] xl:max-h-[180px];
+  @apply w-full h-full;
 }
 .card-linear {
   @apply absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20;
@@ -578,6 +578,37 @@ footer {
 }
 .authenticate-text-hightlight {
   @apply text-third;
+}
+
+.pagination-container {
+  @apply border-none  z-10 mx-auto mt-8 flex flex-col justify-center gap-4 border p-6 sm:flex-row sm:justify-between;
+}
+.pagination-navigation {
+  @apply mx-auto flex content-center justify-center gap-6;
+}
+.pagination-button {
+  @apply flex cursor-pointer items-center justify-center;
+}
+.pagination-icon {
+  @apply h-6 w-6;
+}
+.pagination-icon-container {
+  @apply text-secondary my-auto flex justify-center;
+}
+.pagination-input {
+  @apply text-secondary flex content-center justify-center gap-4;
+}
+.pagination-item {
+  @apply text-secondary hover:bg-quinary hover:text-primary dark:bg-primary dark:hover:bg-quinary dark:hover:text-primary flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium;
+}
+.pagination-item-active {
+  @apply bg-secondary text-primary dark:bg-senary dark:text-secondary;
+}
+.pagination-page_input {
+  @apply h-6 w-14;
+}
+.pagination-info {
+  @apply text-secondary my-auto hidden sm:block;
 }
 
 /*# sourceMappingURL=style.css.map */

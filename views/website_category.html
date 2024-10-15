@@ -3,12 +3,12 @@
 {% block content %}
 
 <section>
-	{{websiteCategory}}
 	{% include 'components/breadcrumb.html' with { page:'Category' , title: websiteCategory.title} %}
 
-	{% include 'components/category_content_1.html' %}
+	{% include 'components/website_content_1.html' with {data: websiteCategory, title: websiteCategory.title } %}
 
-	{% include 'components/category_content_2.html' %}
+	{% include 'components/website_content_2.html' with {data: websiteCategory, title:
+	websiteCategory.title } %}
 </section>
 
 {% endblock %}
