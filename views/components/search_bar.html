@@ -1,9 +1,9 @@
-<form action="{{ link_search() }}" class="navbar-search-menu" role="search" style="display: none" x-show="navSearch"
-				@click.outside="navSearch = false">
+<form @click.outside="navSearch = false" action="{{ link_search() }}" class="navbar-search-menu" role="search" style="display: none"
+				x-show="navSearch">
 
-	<input type="search" placeholder="Search" name="{{ website.getMetaValue('search-query-name') ?: 'keywords' }}">
+	<input name="{{ website.getMetaValue('search-query-name') ?: 'keywords' }}" placeholder="Search" type="search">
 
-	<button type="submit" class="navbar-search-btn">
+	<button class="navbar-search-btn" type="submit">
 		Search
 	</button>
 </form>

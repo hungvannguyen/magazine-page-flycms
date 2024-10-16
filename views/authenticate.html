@@ -1,112 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/scss/style.css" rel="stylesheet" type="text/css" />
-    <title>Document</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-    </style>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link href="/scss/style.css" rel="stylesheet" type="text/css"/>
+	<title>Document</title>
+	<style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+	</style>
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 </head>
 <body>
 <div class="authenticate-container" x-data="{login:false}">
-    <div class="authenticate-form-box">
-        <h1 class="authenticate-logo">LOGO</h1>
-        <template x-if="!login">
-            <h2 class="authenticate-title">Sign Up</h2>
-        </template>
+	<div class="authenticate-form-box">
+		<h1 class="authenticate-logo">LOGO</h1>
+		<template x-if="!login">
+			<h2 class="authenticate-title">Sign Up</h2>
+		</template>
 
-        <template x-if="login">
-            <h2 class="authenticate-title">Login</h2>
-        </template>
+		<template x-if="login">
+			<h2 class="authenticate-title">Login</h2>
+		</template>
 
-        <template x-if="!login">
-            <p class="authenticate-subtitle">Sign up a new account</p>
-        </template>
+		<template x-if="!login">
+			<p class="authenticate-subtitle">Sign up a new account</p>
+		</template>
 
-        <template x-if="login">
-            <p class="authenticate-subtitle">Login to your account</p>
-        </template>
-        <form action="#" method="POST">
-            <template x-if="!login">
-                <div class="authenticate-input-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="authenticate-icon">
-                        <path fill-rule="evenodd"
-                            d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                            clip-rule="evenodd" />
-                    </svg>
+		<template x-if="login">
+			<p class="authenticate-subtitle">Login to your account</p>
+		</template>
+		<form action="#" method="POST">
+			<template x-if="!login">
+				<div class="authenticate-input-box">
+					<svg class="authenticate-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path clip-rule="evenodd"
+										d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+										fill-rule="evenodd"/>
+					</svg>
 
-                    <input type="text" placeholder="First Name" required>
-                </div>
-            </template>
+					<input placeholder="First Name" required type="text">
+				</div>
+			</template>
 
-            <template x-if="!login">
-                <div class="authenticate-input-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="authenticate-icon">
-                        <path fill-rule="evenodd"
-                            d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                            clip-rule="evenodd" />
-                    </svg>
+			<template x-if="!login">
+				<div class="authenticate-input-box">
+					<svg class="authenticate-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path clip-rule="evenodd"
+										d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+										fill-rule="evenodd"/>
+					</svg>
 
-                    <input type="text" placeholder="Last Name" required>
-                </div>
-            </template>
+					<input placeholder="Last Name" required type="text">
+				</div>
+			</template>
 
-            <div class="authenticate-input-box">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="authenticate-icon">
-                    <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-                    <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-                </svg>
+			<div class="authenticate-input-box">
+				<svg class="authenticate-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/>
+					<path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/>
+				</svg>
 
-                <input type="email" placeholder="Email" required>
-            </div>
+				<input placeholder="Email" required type="email">
+			</div>
 
-            <div class="authenticate-input-box">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="authenticate-icon">
-                    <path fill-rule="evenodd"
-                        d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z"
-                        clip-rule="evenodd" />
-                </svg>
+			<div class="authenticate-input-box">
+				<svg class="authenticate-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path clip-rule="evenodd"
+									d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z"
+									fill-rule="evenodd"/>
+				</svg>
 
-                <input type="password" placeholder="Password" required>
+				<input placeholder="Password" required type="password">
 
-            </div>
+			</div>
 
-            <div class="authenticate-checkbox-box">
-                <div>
-                    <input type="checkbox" id="stay-logged-in">
-                    <label for="stay-logged-in">Stay logged in</label>
-                </div>
-                <template x-if="login">
-                    <a href="#" class="authenticate-text-hightlight">Forgot Password?</a>
-                </template>
-            </div>
+			<div class="authenticate-checkbox-box">
+				<div>
+					<input id="stay-logged-in" type="checkbox">
+					<label for="stay-logged-in">Stay logged in</label>
+				</div>
+				<template x-if="login">
+					<a class="authenticate-text-hightlight" href="#">Forgot Password?</a>
+				</template>
+			</div>
 
-            <template x-if="!login">
-                <button type="submit" class="authenticate-btn">Sign Up</button>
-            </template>
+			<template x-if="!login">
+				<button class="authenticate-btn" type="submit">Sign Up</button>
+			</template>
 
-            <template x-if="login">
-                <button type="submit" class="authenticate-btn">Login</button>
-            </template>
-        </form>
-        <template x-if="!login">
-            <p class="authenticate-terms">By clicking below to sign up, you're agreeing to our <a href="#"
-                class="authenticate-text-hightlight">Terms
-                of Use</a> and <a href="#" class="authenticate-text-hightlight">Privacy
-                Policy</a></p>
-        </template>
+			<template x-if="login">
+				<button class="authenticate-btn" type="submit">Login</button>
+			</template>
+		</form>
+		<template x-if="!login">
+			<p class="authenticate-terms">By clicking below to sign up, you're agreeing to our <a class="authenticate-text-hightlight" href="#">Terms
+				of Use</a> and <a class="authenticate-text-hightlight" href="#">Privacy
+				Policy</a></p>
+		</template>
 
-        <template x-if="!login">
-            <p @click="login = ! login"><a href="#" class="authenticate-login-link">I have an account</a></p>
-        </template>
+		<template x-if="!login">
+			<p @click="login = ! login"><a class="authenticate-login-link" href="#">I have an account</a></p>
+		</template>
 
-        <template x-if="login">
-            <p @click="login = ! login"><a href="#" class="authenticate-login-link">I don't have an account</a></p>
-        </template>
-    </div>
+		<template x-if="login">
+			<p @click="login = ! login"><a class="authenticate-login-link" href="#">I don't have an account</a></p>
+		</template>
+	</div>
 </div>
 </body>
 </html>

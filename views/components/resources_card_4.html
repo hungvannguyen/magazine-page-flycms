@@ -4,7 +4,7 @@
 <div class="card-wrapper-1">
 
 	<a href="{{link_post(resource)}}">
-		<img class="card-image-2" src="{{ image_url( thumbnailFile ) }}" alt="{{resource.title}}">
+		<img alt="{{resource.title}}" class="card-image-2" src="{{ image_url( thumbnailFile ) }}">
 	</a>
 
 	<div class="card-content-1">
@@ -16,10 +16,10 @@
 				{{resource.description}} </p>
 		</div>
 		<p class="card-info">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-date-icon">
-				<path fill-rule="evenodd"
+			<svg class="card-date-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path clip-rule="evenodd"
 								d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
-								clip-rule="evenodd"/>
+								fill-rule="evenodd"/>
 			</svg>
 			<span class="card-date">{{ resource.created_at | date("j F Y") }}</span>
 		</p>
