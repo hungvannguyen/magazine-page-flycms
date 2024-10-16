@@ -34,10 +34,9 @@ section section {
   clip-path: polygon(1% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-nav {
+.navbar {
   @apply bg-secondary;
 }
-
 .navbar-wrapper {
   @apply container mx-auto flex max-w-7xl items-center justify-between px-8 xl:px-5;
 }
@@ -333,7 +332,7 @@ footer {
   @apply flex gap-4 items-center;
 }
 .card-share-1 {
-  @apply flex flex-col gap-4 items-center;
+  @apply hidden sm:flex flex-col gap-4 items-center;
 }
 .card-share-1 span {
   @apply text-seventh text-xl font-medium;
@@ -486,7 +485,7 @@ footer {
   @apply text-secondary border-third rounded border-l-4 py-2 pl-4 pr-2  font-normal italic md:py-4 text-base;
 }
 .post-author {
-  @apply my-10 flex items-center gap-6 border-y py-8;
+  @apply my-10 flex flex-col sm:flex-row items-center gap-6 border-y py-8;
 }
 .post-author-image {
   @apply h-[110px] w-[110px] shrink-0;
@@ -525,7 +524,7 @@ footer {
   @apply border-thirteenth mt-4 h-48 w-full rounded-md border-2 p-2;
 }
 .post-comment-input {
-  @apply mb-4 grid w-full grid-cols-3 gap-4;
+  @apply mb-4 grid grid-cols-1 w-full sm:grid-cols-3 gap-4;
 }
 .post-comment-input input {
   @apply border-thirteenth w-full rounded-md border-2 p-2;
@@ -581,16 +580,16 @@ footer {
 }
 
 .pagination-container {
-  @apply border-none  z-10 mx-auto mt-8 flex flex-col justify-center gap-4 border p-6 sm:flex-row sm:justify-between;
+  @apply mt-8;
 }
 .pagination-navigation {
-  @apply mx-auto flex content-center justify-center gap-6;
+  @apply mx-auto flex content-center justify-center gap-4;
 }
 .pagination-button {
   @apply flex cursor-pointer items-center justify-center;
 }
 .pagination-icon {
-  @apply h-6 w-6;
+  @apply size-6 fill-current hover:text-primary;
 }
 .pagination-icon-container {
   @apply text-secondary my-auto flex justify-center;
@@ -599,16 +598,10 @@ footer {
   @apply text-secondary flex content-center justify-center gap-4;
 }
 .pagination-item {
-  @apply text-secondary hover:bg-quinary hover:text-primary dark:bg-primary dark:hover:bg-quinary dark:hover:text-primary flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium;
+  @apply text-secondary flex size-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium hover:bg-third hover:text-primary;
 }
 .pagination-item-active {
-  @apply bg-secondary text-primary dark:bg-senary dark:text-secondary;
-}
-.pagination-page_input {
-  @apply h-6 w-14;
-}
-.pagination-info {
-  @apply text-secondary my-auto hidden sm:block;
+  @apply bg-third text-primary;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,10 +1,11 @@
 .pagination {
+
   &-container {
-    @apply border-none  z-10 mx-auto mt-8 flex flex-col justify-center gap-4 border p-6 sm:flex-row sm:justify-between;
+    @apply mt-8;
   }
 
   &-navigation {
-    @apply mx-auto flex content-center justify-center gap-6;
+    @apply mx-auto flex content-center justify-center gap-4;
   }
 
   &-button {
@@ -12,7 +13,7 @@
   }
 
   &-icon {
-    @apply h-6 w-6;
+    @apply size-6 fill-current hover:text-primary;
 
     &-container {
       @apply text-secondary my-auto flex justify-center;
@@ -24,18 +25,10 @@
   }
 
   &-item {
-    @apply text-secondary hover:bg-quinary hover:text-primary dark:bg-primary dark:hover:bg-quinary dark:hover:text-primary flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium;
+    @apply text-secondary flex size-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium hover:bg-third hover:text-primary;
 
     &-active {
-      @apply bg-secondary text-primary dark:bg-senary dark:text-secondary;
+      @apply bg-third text-primary;
     }
-  }
-
-  &-page_input {
-    @apply h-6 w-14;
-  }
-
-  &-info {
-    @apply text-secondary my-auto hidden sm:block;
   }
 }

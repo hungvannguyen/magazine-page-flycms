@@ -32,7 +32,7 @@
   }
 
   &-author {
-    @apply my-10 flex items-center gap-6 border-y py-8;
+    @apply my-10 flex flex-col sm:flex-row items-center gap-6 border-y py-8;
 
     &-image {
       @apply h-[110px] w-[110px] shrink-0;
@@ -85,7 +85,7 @@
     }
 
     &-input {
-      @apply mb-4 grid w-full grid-cols-3 gap-4;
+      @apply mb-4 grid grid-cols-1 w-full sm:grid-cols-3 gap-4;
 
       input {
         @apply border-thirteenth w-full rounded-md border-2 p-2;
