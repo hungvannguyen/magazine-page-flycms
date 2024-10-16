@@ -2,7 +2,9 @@
 
 {% set posts = multikey_filter_get_posts(query) %}
 
-{% include 'components/content_heading.html' with { title: "Most View In " ~ title } %}
+<div class="px-2">
+	{% include 'components/content_heading.html' with { title: "Most View In " ~ title } %}
+</div>
 <section class="card-container">
 
 	{% set firstPost = posts|first %}

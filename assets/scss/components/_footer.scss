@@ -4,15 +4,15 @@ footer {
 
 .footer {
   &-container {
-    @apply mt-10 mx-4 lg:mx-auto border-b border-primary;
+    @apply border-primary mx-4 mt-10 border-b lg:mx-auto;
   }
 
   &-top {
-    @apply grid max-w-7xl mx-auto grid-cols-2 gap-10 py-10 lg:grid-cols-6 lg:gap-16;
+    @apply mx-auto grid max-w-7xl grid-cols-2 gap-10 py-10 lg:grid-cols-6 lg:gap-16;
   }
 
   &-bottom {
-    @apply max-w-7xl mx-auto flex flex-col gap-4 py-4 lg:flex-row lg:justify-between lg:items-center lg:py-6;
+    @apply mx-auto flex max-w-7xl flex-col gap-4 py-2 lg:flex-row lg:items-center lg:justify-between lg:py-4;
 
     span {
       @apply text-twelfth text-sm;

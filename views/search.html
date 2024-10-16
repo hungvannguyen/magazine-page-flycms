@@ -1,0 +1,10 @@
+{% extends 'layouts/default.html' %}
+
+{% block content %}
+<section>
+
+	{% include 'components/breadcrumb.html' with { page:'Search' , title: keywords} %}
+
+	{% include 'components/website_content_2.html' with { search: posts, count: postsCount, title:
+	keywords } %}
+</section>{% endblock %}

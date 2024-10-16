@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ pageTitle }}</title>
+
+	{% if theme.dev_mode %}
+	<link href="{{ link_asset('css/style.min.css') }}?t={{ time() }}" rel="stylesheet" type="text/css"/>
+	{% else %}
+	<link href="{{ link_asset('css/style.min.css') }}?v=9" rel="stylesheet" type="text/css"/>
+	{% endif %}
+
+	{% include 'components/common_css.html' %}
+</head>
+<body>
+
+<div>
+	{{ block('content') }}
+</div>
+
+{% if theme.dev_mode %}
+<script src="{{ link_asset('js/main.js') }}?t={{ time() }}" type="module"></script>
+{% else %}
+
+<script src="{{ link_asset('js/main.min.js') }}?v=9" type="module"></script>
+{% endif %}
+
+{% include 'components/common_js.html' %}
+</body>
+</html>

@@ -1,20 +1,56 @@
+{% if not search %}
+
 {%set query = multikey_filter_post_query().where('visibility', '=', 'public').setFilterKeys([data.id]).setFilterKeyMatchingType('all').sortBy('created_at').sortDesc().setLimit(24)%}
 
 {% set posts = multikey_filter_get_posts(query) %}
 
+{% endif %}
+
+{% if not search %}
+
+{% set count = multikey_filter_count(query) %}
+
+{% else %}
+
+{% set count = count %}
+
+{% endif %}
+
 <section class="card-container">
 	<div class="col-span-2">
 
+		{% if not search %}
+
 		{% include 'components/content_heading.html' with { title: "More in " ~ title } %}
+
+		{% else %}
+
+		{% include 'components/content_heading.html' with { title: "Search results for: " ~ title } %}
+
+		{% endif %}
 
 		<div class="card-container-2">
 
+			{% if count == 0 %}
+			<div class="flex justify-center items-center">
+				<p class="text-gray-500">No results found</p>
+			</div>
+			{% endif %}
+
+			{% if not search %}
 			{% include 'components/list_resource.html' with { resources: posts, resources_card: 'resources_card_9' } %}
+			{% else %}
+			{% include 'components/list_resource.html' with { resources: search, resources_card: 'resources_card_9' } %}
+			{% endif %}
 
 		</div>
 
 		<div>
-			{% include 'components/pagination_tailwind.html' with { count: multikey_filter_count(query) } %}
+			{% if not search %}
+			{% include 'components/pagination_tailwind.html' with { count: count } %}
+			{% else %}
+			{% include 'components/pagination_tailwind.html' with { count: count } %}
+			{% endif %}
 		</div>
 	</div>
 

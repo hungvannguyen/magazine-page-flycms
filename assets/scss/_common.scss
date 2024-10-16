@@ -15,18 +15,18 @@ section {
     @apply text-fifth mx-auto mb-8 max-w-7xl text-3xl font-bold;
 
     &-1 {
-        @apply mx-auto mb-10 max-w-7xl text-3xl font-bold text-primary;
+        @apply text-primary mx-auto mb-10 max-w-7xl text-3xl font-bold;
     }
 
     &-3 {
-        @apply mx-auto mb-6 max-w-7xl text-xl font-bold text-primary;
+        @apply text-primary mx-auto mb-6 max-w-7xl text-xl font-bold;
     }
 
     &-underline {
         @apply mt-2 flex gap-2;
 
         &-left {
-            @apply h-[5px] w-[47px] bg-third;
+            @apply bg-third h-[5px] w-[47px];
 
             clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
         }
@@ -38,3 +38,4 @@ section {
         }
     }
 }
+

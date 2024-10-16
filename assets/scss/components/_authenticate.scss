@@ -4,11 +4,11 @@
     }
 
     &-form-box {
-        @apply w-full max-w-md rounded-lg border bg-secondary p-10 text-center text-primary shadow-lg;
+        @apply bg-secondary text-primary w-full max-w-md rounded-lg border p-10 text-center shadow-lg;
     }
 
     &-logo {
-        @apply mb-5 text-6xl font-bold text-primary;
+        @apply text-primary mb-5 text-6xl font-bold;
     }
 
     &-title {
@@ -20,7 +20,7 @@
     }
 
     &-input-box {
-        @apply mb-4 flex items-center rounded-md bg-primary p-3;
+        @apply bg-primary mb-4 flex items-center rounded-md p-3;
 
         input {
             @apply text-fourteenth ml-2 w-full border-none bg-transparent focus:outline-none;
@@ -40,15 +40,15 @@
     }
 
     &-btn {
-        @apply hover:bg-ninth w-full cursor-pointer rounded-md bg-third py-3 text-white;
+        @apply hover:bg-ninth bg-third w-full cursor-pointer rounded-md py-3 text-white;
     }
 
     &-terms {
-        @apply mt-6 text-xs text-primary;
+        @apply text-primary mt-6 text-xs;
     }
 
     &-login-link {
-        @apply mt-4 block text-third hover:underline;
+        @apply text-third mt-4 block hover:underline;
     }
 
     &-text-hightlight {

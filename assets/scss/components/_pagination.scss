@@ -1,5 +1,4 @@
 .pagination {
-
   &-container {
     @apply mt-8;
   }
@@ -13,7 +12,7 @@
   }
 
   &-icon {
-    @apply size-6 fill-current hover:text-primary;
+    @apply hover:text-primary size-4 fill-current;
 
     &-container {
       @apply text-secondary my-auto flex justify-center;
@@ -25,7 +24,7 @@
   }
 
   &-item {
-    @apply text-secondary flex size-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium hover:bg-third hover:text-primary;
+    @apply text-secondary hover:bg-third hover:text-primary flex size-6 cursor-pointer items-center justify-center rounded-full border p-4 font-medium;
 
     &-active {
       @apply bg-third text-primary;

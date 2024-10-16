@@ -1,0 +1,21 @@
+.error {
+  &-container {
+    @apply flex h-96 flex-col items-center justify-center;
+  }
+
+  &-message {
+    @apply space-y-8 text-4xl font-bold;
+  }
+
+  &-code {
+    @apply text-center text-6xl;
+  }
+
+  &-description {
+    @apply text-center text-xl;
+  }
+
+  &-button-to-home {
+    @apply mt-4 rounded-lg px-4 py-2;
+  }
+}

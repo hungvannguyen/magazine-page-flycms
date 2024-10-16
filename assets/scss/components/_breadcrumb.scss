@@ -1,13 +1,13 @@
 .breadcrumb {
-    &-container {
-        @apply mx-auto my-10 max-w-7xl px-4 xl:px-0;
+  &-container {
+    @apply mx-auto my-10 max-w-7xl px-2;
 
-        ol {
-            @apply flex flex-wrap;
+    ol {
+      @apply flex flex-wrap;
 
-            li {
-                @apply text-fifth after:text-fifth text-sm font-semibold after:mx-2 after:content-['>'] last:text-third after:last:content-none;
-            }
-        }
+      li {
+        @apply text-fifth after:text-fifth last:text-third text-sm font-semibold after:mx-1 after:content-['>'] after:last:content-none;
+      }
     }
+  }
 }

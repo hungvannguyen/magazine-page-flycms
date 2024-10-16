@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .advertisement {
   &-container {
     @apply my-10 hidden max-w-7xl items-center justify-center lg:flex lg:h-[88px] lg:w-[672px] xl:h-[122px] xl:w-[862px];
