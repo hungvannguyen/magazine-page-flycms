@@ -63,6 +63,12 @@ quality: subject.getMetaValue('quality'),
 <script src="{{ link_asset('js/main.min.js') }}?v=9" type="module"></script>
 {% endif %}
 
+<script type="module">
+    import { formatDate } from '{{ link_asset('js/main.js') }}';
+
+    window.formatDate = formatDate;
+</script>
+
 {% include 'components/common_js.html' %}
 </body>
 </html>

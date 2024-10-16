@@ -209,7 +209,7 @@
 			<div class="mt-8" x-data="list('/ajax/suggestions/{{ post.slug }}', true, 3)">
 				{% include 'components/content_heading.html' with { title: "Related Content" }%}
 
-				<div class="card-container-2" >
+				<div class="card-container-2">
 					<template x-for="post in data">
 						<div class="card-wrapper-1">
 
@@ -252,10 +252,4 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => window.viewCount('{{ post.slug }}'))
-</script>
-
-<script type="module">
-    import { formatDate } from '{{ link_asset('js/main.js') }}';
-
-    window.formatDate = formatDate;
 </script>{% endblock %}

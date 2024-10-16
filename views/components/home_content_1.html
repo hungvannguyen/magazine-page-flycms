@@ -1,30 +1,51 @@
-{%set query = multikey_filter_post_query().where('visibility', '=', 'public').setFilterKeyMatchingType('all').sortBy('updated_at').sortDesc().setLimit(3)%}
+{% set createdAtQuery = multikey_filter_post_query().where('visibility', '=', 'public').setFilterKeyMatchingType('all').sortBy('created_at').sortDesc().setLimit(3) %}
 
-{% set posts = multikey_filter_get_posts(query) %}
+{% set createdAt = multikey_filter_get_posts(createdAtQuery) %}
 
 <section class="card-container">
 
 	<div class="col-span-2 flex flex-col gap-4">
 
-		{% include 'components/resources_card_1.html' with { resource: posts[0] } %}
+		{% include 'components/resources_card_1.html' with { resource: createdAt[0] } %}
 
 		<div class="card-container-1">
 
-			{% include 'components/list_resource.html' with { resources: posts|slice(1,2), resources_card: 'resources_card_2' } %}
+			{% include 'components/list_resource.html' with { resources: createdAt|slice(1,2), resources_card: 'resources_card_2' } %}
 		</div>
 	</div>
 
 	<div>
 		{% include 'components/content_heading.html' with { title: "Most view" } %}
 
-		<div class="card-container-2">
+		<div class="card-container-2" x-data="list('/ajax/top/year', true, 4)">
+			<template x-for="(post,index) in data">
+				<div class="card-wrapper-1">
+					<div class="relative w-[133px] h-[133px]">
+						<a :href="post.url">
+							<img class="card-image-1" :src="post.thumbnail_file_url" alt="Image">
+						</a>
+						<div class="number-badge" x-text="index+1"></div>
+					</div>
 
-			{%set query = multikey_filter_post_query().where('visibility', '=',
-			'public').setFilterKeyMatchingType('all').sortBy('views').sortDesc().setLimit(24)%}
+					<div class="card-content-1">
+						<a :href="post.url">
+							<p class="card-title-2" x-text="post.title"></p>
+						</a>
+						<p class="card-info">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-date-icon">
+								<path fill-rule="evenodd"
+												d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
+												clip-rule="evenodd"/>
+							</svg>
+							<span class="card-date" x-text="formatDate(post.created_at)"></span>
+						</p>
+					</div>
 
-			{% set posts = multikey_filter_get_posts(query) %}
-
-			{% include 'components/list_resource.html' with { resources: posts|slice(0,4), resources_card: 'resources_card_3' } %}
+				</div>
+			</template>
+			<div x-show="isLoading">
+				{% include 'components/loading.html'%}
+			</div>
 		</div>
 	</div>
 </section>
