@@ -4,7 +4,7 @@ footer {
 
 .footer {
   &-container {
-    @apply border-primary mx-4 mt-10 border-b lg:mx-auto;
+    @apply border-primary mx-4 mt-10 border-b px-5 lg:mx-auto;
   }
 
   &-top {

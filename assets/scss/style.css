@@ -1,9 +1,8 @@
 @import "tailwindcss/base.css";
 @import "tailwindcss/components.css";
 @import "tailwindcss/utilities.css";
-.body {
-  font-family: Inter, sans-serif;
-  font-weight: 700;
+body {
+  font-family: "Inter", sans-serif;
 }
 
 section {
@@ -14,7 +13,13 @@ section section {
 }
 
 .heading {
-  @apply text-fifth mx-auto mb-8 max-w-7xl text-3xl font-bold;
+  @apply text-fifth mx-auto mb-8 mt-10 max-w-7xl text-3xl font-bold lg:mt-0;
+}
+.heading a {
+  @apply flex justify-between;
+}
+.heading a button {
+  @apply relative flex gap-2 items-center text-sm text-secondary font-medium border border-fifteenth rounded-md px-4 py-2;
 }
 .heading-1 {
   @apply text-primary mx-auto mb-10 max-w-7xl text-3xl font-bold;
@@ -23,7 +28,7 @@ section section {
   @apply text-primary mx-auto mb-6 max-w-7xl text-xl font-bold;
 }
 .heading-underline {
-  @apply mt-2 flex gap-2;
+  @apply mt-2 flex gap-1;
 }
 .heading-underline-left {
   @apply bg-third h-[5px] w-[47px];
@@ -32,6 +37,10 @@ section section {
 .heading-underline-right {
   @apply border-sixth h-[6px] w-full border-y;
   clip-path: polygon(1% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.arrow {
+  @apply size-3 text-third;
 }
 
 .navbar {
@@ -119,7 +128,7 @@ section section {
   @apply bg-secondary fixed inset-0 z-50 flex w-[65%] flex-col gap-4 lg:hidden;
 }
 .navbar-mobile-sidebar-wrapper {
-  @apply border-primary flex items-center justify-between border-b px-4 py-4;
+  @apply border-tenth flex items-center justify-between border-b px-4 py-4;
 }
 .navbar-mobile-sidebar-user {
   @apply flex items-center gap-2;
@@ -140,16 +149,16 @@ section section {
   @apply first:mt-2;
 }
 .navbar-mobile-sidebar-menu li {
-  @apply border-primary border-b;
+  @apply border-tenth border-b;
 }
 .navbar-mobile-dropdown-button {
   @apply text-primary flex cursor-pointer justify-between p-4 text-sm font-bold;
 }
 .navbar-mobile-dropdown-menu {
-  @apply border-primary mr-1 flex flex-col border border-b-0;
+  @apply flex flex-col;
 }
 .navbar-mobile-dropdown-menu a {
-  @apply text-primary hover:text-third flex items-center px-4 py-2 text-xs font-medium;
+  @apply text-primary border-tenth hover:text-third flex items-center border px-4 py-2 text-xs font-medium last:border-b-0;
 }
 
 footer {
@@ -157,7 +166,7 @@ footer {
 }
 
 .footer-container {
-  @apply border-primary mx-4 mt-10 border-b lg:mx-auto;
+  @apply border-primary mx-4 mt-10 border-b px-5 lg:mx-auto;
 }
 .footer-top {
   @apply mx-auto grid max-w-7xl grid-cols-2 gap-10 py-10 lg:grid-cols-6 lg:gap-16;
@@ -188,37 +197,46 @@ footer {
 }
 
 .card-container {
-  @apply mt-10 grid max-w-7xl grid-cols-1 space-y-4 px-2 lg:grid-cols-3 lg:gap-8 lg:space-y-0;
+  @apply grid max-w-7xl grid-cols-1 px-5 lg:my-10 lg:grid-cols-3 lg:gap-8 lg:space-y-0;
 }
 .card-container-1 {
   @apply grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-4;
 }
 .card-container-2 {
-  @apply grid grid-cols-1 gap-4;
+  @apply grid grid-cols-1 gap-6 lg:gap-4;
 }
 .card-container-3 {
   @apply grid grid-cols-1 gap-4 lg:grid-cols-3;
 }
 .card-container-4 {
-  @apply bg-eighth mt-10 px-2 py-16;
+  @apply bg-eighth mt-10 px-5 pt-8 md:py-16;
 }
 .card-container-4 div {
   @apply mx-0 max-w-7xl lg:mx-auto;
 }
 .card-container-5 {
-  @apply grid grid-cols-1 gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-20;
+  @apply divide-tenth grid grid-cols-1 gap-4 divide-y md:divide-y-0 lg:grid-cols-[1fr_auto_1fr] lg:gap-10;
+}
+.card-container-6 {
+  @apply grid grid-cols-1 gap-6;
+}
+.card-container-7 {
+  @apply divide-tenth grid grid-cols-1 gap-0 divide-y md:divide-y-0 lg:gap-4;
 }
 .card-wrapper {
   @apply relative isolate flex flex-col justify-end overflow-hidden rounded-md px-2 pb-2 lg:px-4;
 }
+.card-wrapper img {
+  @apply transition-transform duration-300;
+}
 .card-wrapper-1 {
-  @apply flex gap-4;
+  @apply flex gap-4 lg:gap-2 xl:gap-4;
 }
 .card-wrapper-2 {
   @apply flex w-full flex-col gap-4;
 }
 .card-wrapper-3 {
-  @apply flex flex-col gap-4 lg:flex-row;
+  @apply flex flex-col gap-4 rounded-md lg:flex-row;
 }
 .card-size {
   @apply h-[389px] max-h-[389px];
@@ -236,64 +254,79 @@ footer {
   @apply h-[241px] max-h-[241px] lg:h-[191px] lg:max-h-[191px] xl:h-[244px] xl:max-h-[244px];
 }
 .card-size-5 {
-  @apply h-[561px] max-h-[561px] lg:h-[444px] lg:max-h-[444px] xl:h-[586px] xl:max-h-[586px];
+  @apply h-[561px] max-h-[561px] lg:h-[444px] lg:max-h-[444px] xl:h-[561px] xl:max-h-[561px];
 }
 .card-size-6 {
-  @apply h-full w-full;
+  @apply h-full min-h-[280px] w-full lg:min-h-[138px] xl:min-h-[175px];
+}
+.card-size-7 {
+  @apply h-[561px] max-h-[561px] lg:h-[444px] lg:max-h-[444px] xl:h-[500px] xl:max-h-[500px];
 }
 .card-linear {
-  @apply absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20;
+  @apply absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50;
 }
 .card-image {
-  @apply absolute inset-0 h-full w-full object-cover;
+  @apply absolute inset-0 h-full w-full object-cover group-hover:scale-105;
 }
 .card-image-1 {
   @apply h-[133px] max-h-[133px] w-[133px] max-w-[133px] shrink-0 rounded-md object-cover;
 }
 .card-image-2 {
-  @apply h-[160px] max-h-[160px] w-[160px] max-w-[160px] shrink-0 rounded-md object-cover lg:h-[121px] lg:max-h-[121px] lg:w-[121px] lg:max-w-[121px] xl:h-[160px] xl:max-h-[160px] xl:w-[160px] xl:max-w-[160px];
+  @apply h-[160px] max-h-[160px] w-[160px] max-w-[160px] shrink-0 rounded-md object-cover lg:h-[121px] lg:max-h-[121px] lg:w-[121px] lg:max-w-[121px] xl:h-[155px] xl:max-h-[155px] xl:w-[155px] xl:max-w-[155px];
 }
 .card-image-3 {
-  @apply h-[271px] max-h-[271px] w-full rounded-md object-cover lg:h-[214px] lg:max-h-[214px] xl:h-[271px] xl:max-h-[271px];
+  @apply h-[271px] max-h-[271px] w-full rounded-md object-cover lg:h-[220px] lg:max-h-[220px] xl:h-[271px] xl:max-h-[271px];
 }
 .card-image-4 {
-  @apply h-[271px] max-h-[271px] w-full shrink-0 rounded-md object-cover lg:h-[125px] lg:max-h-[125px] lg:w-[125px] lg:max-w-[125px] xl:h-[130px] xl:max-h-[130px] xl:w-[214px] xl:max-w-[214px];
+  @apply h-[271px] max-h-[271px] w-full shrink-0 rounded-md object-cover lg:h-[126px] lg:max-h-[126px] lg:w-[200px] lg:max-w-[200px] xl:h-[145px] xl:max-h-[145px] xl:w-[214px] xl:max-w-[214px];
 }
 .card-image-5 {
   @apply h-[210px] max-h-[210px] w-full shrink-0 rounded-md object-cover lg:h-[167px] lg:max-h-[167px] lg:w-[243px] lg:max-w-[243px] xl:h-[210px] xl:max-h-[210px] xl:w-[306px] xl:max-w-[306px];
 }
 .card-content {
-  @apply z-10 flex w-full flex-col gap-3 pb-2 xl:gap-4;
+  @apply z-10 flex w-full flex-col gap-3 px-2 pb-2 lg:gap-2 lg:px-1 lg:pb-1 xl:gap-3 xl:pb-2;
 }
 .card-content-1 {
-  @apply flex flex-col justify-between gap-1 py-1 xl:gap-3 xl:py-2;
+  @apply flex flex-col justify-between gap-1 px-2 py-1 xl:gap-3 xl:px-1 xl:py-2;
 }
 .card-content-2 {
   @apply flex flex-col gap-1 xl:gap-2;
 }
 .card-content-3 {
-  @apply flex flex-col gap-2 py-2;
+  @apply flex flex-col gap-4 py-1;
+}
+.card-content-4 {
+  @apply mt-3 flex w-full flex-col gap-4;
+}
+.card-content-5 {
+  @apply flex flex-col justify-between gap-4 px-5 py-4 lg:gap-1 lg:px-2 lg:py-2 xl:gap-3 xl:px-1;
 }
 .card-title {
-  @apply text-primary line-clamp-2 text-3xl font-semibold;
+  @apply text-primary group-hover:text-third line-clamp-2 text-[32px] font-semibold;
 }
 .card-title-1 {
-  @apply text-primary line-clamp-2 text-xl font-semibold;
+  @apply text-primary group-hover:text-third line-clamp-2 text-xl font-semibold;
 }
 .card-title-2 {
-  @apply text-fifth line-clamp-2 text-base font-bold;
+  @apply text-fifth group-hover:text-third line-clamp-2 text-base font-semibold;
 }
 .card-title-3 {
-  @apply text-secondary line-clamp-2 text-xl font-semibold;
+  @apply text-secondary group-hover:text-third line-clamp-2 text-xl font-semibold;
 }
 .card-title-4 {
-  @apply text-primary line-clamp-2 text-sm font-semibold;
+  @apply text-primary group-hover:text-third line-clamp-2 text-sm font-semibold;
 }
 .card-title-6 {
-  @apply text-primary line-clamp-2 text-3xl font-bold lg:text-base;
+  @apply text-primary group-hover:text-third line-clamp-2 text-3xl font-semibold md:text-sm xl:text-base;
 }
 .card-title-7 {
-  @apply text-primary line-clamp-2 text-base font-bold;
+  @apply text-primary group-hover:text-third line-clamp-2 text-base font-semibold lg:text-sm xl:text-base;
+}
+.card-title-8 {
+  @apply text-primary group-hover:text-third line-clamp-2 text-2xl font-semibold;
+}
+.card-title-9 {
+  @apply text-primary group-hover:text-third line-clamp-2 text-3xl font-semibold;
 }
 .card-description {
   @apply text-seventh line-clamp-3 text-xs font-medium lg:line-clamp-2 xl:line-clamp-3;
@@ -302,13 +335,13 @@ footer {
   @apply text-seventh line-clamp-3 text-sm font-medium lg:line-clamp-2 lg:text-xs xl:line-clamp-3;
 }
 .card-tag {
-  @apply text-primary bg-third z-10 h-[29px] w-auto max-w-fit rounded-md px-2 py-1 text-center text-sm font-semibold;
+  @apply text-primary bg-third shadow-third/50 z-10 h-auto w-auto max-w-fit rounded-md px-2 py-1 text-center text-sm font-semibold shadow-lg;
 }
 .card-tag-1 {
-  @apply text-primary bg-third flex h-[30px] w-auto max-w-fit items-center justify-center rounded-md px-1 py-1 text-base font-semibold;
+  @apply text-primary bg-third shadow-third/50 flex h-auto w-auto max-w-fit items-center justify-center rounded-md px-2 py-1 text-base font-semibold shadow-lg lg:text-xs xl:text-base;
 }
 .card-tag-2 {
-  @apply text-primary bg-third h-[25px] w-auto max-w-fit rounded-md px-2 py-1 text-center  text-xs font-semibold;
+  @apply text-primary bg-third shadow-third/50 h-auto w-auto max-w-fit rounded-md px-2 py-1 text-center text-xs  font-semibold shadow-lg;
 }
 .card-info {
   @apply flex flex-wrap items-center gap-2;
@@ -316,11 +349,20 @@ footer {
 .card-info-tag {
   @apply text-fourth text-xs font-medium;
 }
+.card-info-tag-1 {
+  @apply text-seventh text-xs font-medium;
+}
 .card-date {
-  @apply text-fourth flex items-center gap-2 text-xs font-medium;
+  @apply text-fourth flex items-center gap-2 text-sm font-medium lg:text-xs xl:text-sm;
+}
+.card-date-1 {
+  @apply text-seventh flex items-center gap-2 text-sm font-medium lg:text-xs xl:text-sm;
 }
 .card-date-icon {
-  @apply text-fourth size-6;
+  @apply text-fourth size-6 md:size-4 lg:size-6;
+}
+.card-date-icon-1 {
+  @apply text-seventh size-6 md:size-4 lg:size-6;
 }
 .card-btn {
   @apply my-8 flex flex-col items-center justify-center;
@@ -329,7 +371,7 @@ footer {
   @apply text-seventh border-seventh rounded-md border px-4 py-2 text-center text-base font-semibold;
 }
 .card-share {
-  @apply flex items-center gap-4;
+  @apply hidden items-center gap-4 md:flex;
 }
 .card-share-1 {
   @apply mt-1 hidden flex-col items-center gap-4 sm:flex;
@@ -352,21 +394,24 @@ footer {
 .card-share span {
   @apply text-fourth text-xs font-medium;
 }
+.card-drop-shadow {
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
 
 .divider {
   @apply bg-tenth hidden w-px lg:block;
 }
 
 .number-badge {
-  @apply text-third absolute bottom-0 right-0 flex h-[40px] w-[40px] items-center justify-center rounded-tl-md bg-white p-2 text-3xl font-bold;
+  @apply text-third absolute bottom-0 right-0 flex h-[30px] w-[30px] items-center justify-center rounded-tl-md bg-white p-2 text-3xl font-bold;
 }
 
 .video-thumbnail {
-  @apply relative inline-block;
+  @apply relative inline-block h-auto;
 }
 
 .play-button {
-  @apply bg-ninth text-primary flex size-12 cursor-pointer items-center justify-center rounded-full p-3 hover:animate-bounce;
+  @apply bg-ninth text-primary flex h-[64px] w-[64px] cursor-pointer items-center justify-center rounded-full p-3 md:h-[48px] md:w-[48px];
 }
 .play-button-container {
   @apply absolute inset-0 flex items-center justify-center;
@@ -385,20 +430,17 @@ footer {
   @apply size-6;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 .advertisement-container {
-  @apply my-10 hidden max-w-7xl items-center justify-center lg:flex lg:h-[88px] lg:w-[672px] xl:h-[122px] xl:w-[862px];
+  @apply my-10 flex max-w-7xl items-center justify-center lg:h-[88px] lg:w-[672px] xl:h-[122px] xl:w-[862px];
 }
 .advertisement-container-1 {
-  @apply h-[320px] w-full max-w-7xl items-center justify-center lg:h-[251px] xl:h-[321px];
+  @apply mt-16 h-[320px] w-full items-center justify-center lg:mt-11 lg:h-[251px] xl:h-[321px];
 }
 .advertisement-container-2 {
-  @apply mt-12 hidden h-[320px] w-full max-w-7xl items-center justify-center lg:flex lg:h-[695px] xl:h-[851px];
+  @apply mt-12 hidden h-full w-full max-w-7xl items-center justify-center lg:flex;
 }
 .advertisement-container-3 {
-  @apply mt-12 h-[733px] w-full max-w-7xl items-center justify-center xl:h-[733px];
+  @apply mt-12 h-full w-full max-w-7xl items-center justify-center lg:h-[733px];
 }
 .advertisement-content {
   @apply border-seventh flex h-full w-full items-center justify-center border p-4;
@@ -408,25 +450,25 @@ footer {
   @apply bg-fifth mt-16;
 }
 .email-wrapper {
-  @apply mx-auto flex max-w-7xl gap-4;
+  @apply mx-auto grid max-w-7xl grid-cols-1 gap-4 overflow-hidden px-2 lg:grid-cols-2;
 }
 .email-content {
-  @apply flex flex-col gap-4 p-8;
+  @apply flex flex-col gap-4 px-10 py-16 md:px-4;
 }
 .email-special {
   @apply text-third;
 }
 .email-title {
-  @apply text-primary text-5xl font-bold italic;
+  @apply text-primary text-3xl font-bold italic lg:text-5xl;
 }
 .email-highlight {
-  @apply text-primary text-3xl font-bold italic;
+  @apply text-primary text-2xl font-bold italic lg:text-3xl;
 }
 .email-features {
   @apply flex flex-col gap-4;
 }
 .email-features li {
-  @apply text-primary flex items-center gap-2 text-sm;
+  @apply text-primary flex items-center gap-2 text-xs lg:text-sm;
 }
 .email-icon {
   @apply text-third size-6;
@@ -438,23 +480,22 @@ footer {
   @apply text-primary text-xs font-semibold;
 }
 .email-submit {
-  @apply my-4 flex gap-4;
+  @apply my-4 flex flex-wrap gap-4;
 }
 .email-submit-button {
-  @apply text-primary bg-third w-1/2 rounded-md py-2 text-xs font-semibold sm:text-sm;
+  @apply text-primary bg-third w-fit rounded-md p-2 text-xs font-semibold sm:text-sm;
 }
 .email-input {
-  @apply border-third w-full rounded-md border p-2;
+  @apply w-fit rounded-md md:w-[60%] lg:w-[58%];
 }
 .email-image {
-  @apply before:from-fifth after:to-fifth relative hidden w-[612px]
-    overflow-hidden before:absolute before:inset-0 before:h-1/2 before:bg-gradient-to-b before:to-transparent
+  @apply before:from-fifth after:to-fifth relative hidden w-[612px] overflow-hidden before:absolute before:inset-0 before:h-1/2 before:bg-gradient-to-b before:to-transparent
 
     after:absolute after:inset-x-0 after:bottom-0 after:h-1/2 after:bg-gradient-to-b after:from-transparent lg:flex;
 }
 
 .breadcrumb-container {
-  @apply mx-auto my-10 max-w-7xl px-2;
+  @apply mx-auto my-16 max-w-7xl px-4;
 }
 .breadcrumb-container ol {
   @apply flex flex-wrap;
@@ -464,10 +505,13 @@ footer {
 }
 
 .post-container {
-  @apply mt-4 flex gap-6 lg:mt-6 xl:mt-8;
+  @apply mt-6 flex gap-6 xl:mt-8;
+}
+.post-title {
+  @apply text-primary line-clamp-2 text-[36px] font-semibold;
 }
 .post-content {
-  @apply flex flex-col gap-2;
+  @apply flex flex-col gap-2 px-1 md:px-0;
 }
 .post-content p {
   @apply text-secondary text-base font-medium;

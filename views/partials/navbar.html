@@ -83,14 +83,14 @@
 
 						<button class="navbar-dropdown-button">
 							<a aria-current="page" href="{{ menuItem.link }}" target="{{ menuItem.new_tab ? '_blank' : '' }}"
-											class="navbar-container-bottom-left-link">
+											class="navbar-container-bottom-link">
 								{{ menuItem.text }}</a>
 						</button>
 					</div>
 					{% else %}
 					<div class="navbar-dropdown-container" x-data="{ navMenu: false }" @mouseleave="navMenu = false">
 						<button class="navbar-dropdown-button" @click="navMenu = !navMenu" @mouseover="navMenu = true">
-							<a href="{{ menuItem.link }}" class="navbar-container-bottom-left-link"> {{ menuItem.text }}</a>
+							<a href="{{ menuItem.link }}" class="navbar-container-bottom-link"> {{ menuItem.text }}</a>
 
 							<template x-if="!navMenu">
 								<svg class="navbar-dropdown-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -120,9 +120,9 @@
 				</div>
 
 				<div class="navbar-container-bottom-right" x-data="{ navSearch: false }">
-					<a href="/cateory.html" class="navbar-container-bottom-left-link">Advertise</a>
+					<a href="#" class="navbar-container-bottom-link">Advertise</a>
 
-					<a href="/cateory.html" class="navbar-container-bottom-left-link">Editorial</a>
+					<a href="#" class="navbar-container-bottom-link">Editorial</a>
 
 					<button class="navbar-search" @click="navSearch = !navSearch">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="navbar-search-icon">

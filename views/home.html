@@ -18,6 +18,7 @@
 
 {% endfor %}
 
-{% include 'components/home_content_sections.html' with { tag_data_list: tag_data_list, listData: post_list(), count: listData.getResourcesCount()} %}
-
-{% endblock %}
+<div class="mt-10 md:mt-20">
+	{% include 'components/home_content_sections.html' with { tag_data_list: tag_data_list, listData: post_list(), count:
+	listData.getResourcesCount()} %}
+</div>{% endblock %}

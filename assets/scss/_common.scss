@@ -1,41 +1,54 @@
-.body {
-    font-family: Inter, sans-serif;
-    font-weight: 700;
+body {
+  font-family: 'Inter', sans-serif;
 }
 
-section {
-    @apply mx-auto;
 
-    section {
-        @apply px-4 md:px-2 xl:px-0;
-    }
+section {
+  @apply mx-auto;
+
+  section {
+    @apply px-4 md:px-2 xl:px-0;
+  }
 }
 
 .heading {
-    @apply text-fifth mx-auto mb-8 max-w-7xl text-3xl font-bold;
+  @apply text-fifth mx-auto mb-8 mt-10 max-w-7xl text-3xl font-bold lg:mt-0;
 
-    &-1 {
-        @apply text-primary mx-auto mb-10 max-w-7xl text-3xl font-bold;
+  a {
+    @apply flex justify-between;
+
+    button {
+      @apply relative flex gap-2 items-center text-sm text-secondary font-medium border border-fifteenth rounded-md px-4 py-2;
+    }
+  }
+
+  &-1 {
+    @apply text-primary mx-auto mb-10 max-w-7xl text-3xl font-bold;
+  }
+
+  &-3 {
+    @apply text-primary mx-auto mb-6 max-w-7xl text-xl font-bold;
+  }
+
+  &-underline {
+    @apply mt-2 flex gap-1;
+
+    &-left {
+      @apply bg-third h-[5px] w-[47px];
+
+      clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
     }
 
-    &-3 {
-        @apply text-primary mx-auto mb-6 max-w-7xl text-xl font-bold;
+    &-right {
+      @apply border-sixth h-[6px] w-full border-y;
+
+      clip-path: polygon(1% 0, 100% 0, 100% 100%, 0% 100%);
     }
-
-    &-underline {
-        @apply mt-2 flex gap-2;
-
-        &-left {
-            @apply bg-third h-[5px] w-[47px];
-
-            clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
-        }
-
-        &-right {
-            @apply border-sixth h-[6px] w-full border-y;
-
-            clip-path: polygon(1% 0, 100% 0, 100% 100%, 0% 100%);
-        }
-    }
+  }
 }
+
+.arrow {
+  @apply size-3 text-third;
+}
+
 

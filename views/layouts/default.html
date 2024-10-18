@@ -1,6 +1,33 @@
-{% if request.query('ajax') %}{% set posts = post_list() %}{% set data = { data: posts } %}{% set postsJson = [] %}{% for item in posts %}{% set thumbnailFile = model_relation(item, 'thumbnailFile') %}{% set thumbnailUrl = image_resize(300, thumbnailFile) ?: link_asset('images/das-1.png') %}{% set subject = model_relation(item, 'subject') %}{% set tag = model_relation(item, 'websiteTags')%}
+{% if request.query('ajax') %}
+{% set posts = post_list() %}
+{% set data = { data: posts } %}
+{% set postsJson = [] %}
+{% for item in posts %}
+{% set thumbnailFile = model_relation(item, 'thumbnailFile') %}
+{% set thumbnailUrl = image_resize(300, thumbnailFile) ?: link_asset('images/das-1.png') %}
+{% set subject = model_relation(item, 'subject') %}
+{% set tag = model_relation(item, 'websiteTags')%}
 
-{% set postsJson = postsJson|merge([{title: item.title,slug: item.slug,description: item.description,url: link_to(item),thumbnail_file_url: thumbnailUrl,tags: tag,created_at: item.created_at,meta: {episodeCurrent: subject.getMetaValue('episode_current'),title: subject.title,year: subject.getMetaValue('year'),quality: subject.getMetaValue('quality'),}}])%}{% endfor %}{% set data = { data: postsJson } %}{{ data|json_encode }}
+{% set postsJson = postsJson|merge([
+{
+title: item.title,
+slug: item.slug,
+description: item.description,
+url: link_to(item),
+thumbnail_file_url: thumbnailUrl,
+tags: tag,
+created_at: item.created_at,
+meta: {
+episodeCurrent: subject.getMetaValue('episode_current'),
+title: subject.title,
+year: subject.getMetaValue('year'),
+quality: subject.getMetaValue('quality'),
+}
+}
+])%}
+{% endfor %}
+{% set data = { data: postsJson } %}
+{{ data|json_encode }}
 
 {% else %}
 
@@ -8,7 +35,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ pageTitle }}</title>
 
 	{% if theme.dev_mode %}
@@ -16,6 +43,9 @@
 	{% else %}
 	<link href="{{ link_asset('css/style.min.css') }}?v=9" rel="stylesheet" type="text/css"/>
 	{% endif %}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 	{% include 'components/common_css.html' %}
 </head>
@@ -37,14 +67,12 @@
 {% endif %}
 
 <script type="module">
-    import {formatDate} from '{{ link_asset('
-
-    js / main.js
-    ') }}';
+    import { formatDate } from '{{ link_asset('js/main.js') }}';
 
     window.formatDate = formatDate;
 </script>
 
 {% include 'components/common_js.html' %}
 </body>
-</html>{% endif %}
+</html>
+{% endif %}

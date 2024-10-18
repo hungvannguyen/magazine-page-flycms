@@ -4,11 +4,11 @@
   }
 
   &-wrapper {
-    @apply mx-auto flex max-w-7xl gap-4;
+    @apply mx-auto grid max-w-7xl grid-cols-1 gap-4 overflow-hidden px-2 lg:grid-cols-2;
   }
 
   &-content {
-    @apply flex flex-col gap-4 p-8;
+    @apply flex flex-col gap-4 px-10 py-16 md:px-4;
   }
 
   &-special {
@@ -16,18 +16,18 @@
   }
 
   &-title {
-    @apply text-primary text-5xl font-bold italic;
+    @apply text-primary text-3xl font-bold italic lg:text-5xl;
   }
 
   &-highlight {
-    @apply text-primary text-3xl font-bold italic;
+    @apply text-primary text-2xl font-bold italic lg:text-3xl;
   }
 
   &-features {
     @apply flex flex-col gap-4;
 
     li {
-      @apply text-primary flex items-center gap-2 text-sm;
+      @apply text-primary flex items-center gap-2 text-xs lg:text-sm;
     }
   }
 
@@ -46,20 +46,19 @@
   }
 
   &-submit {
-    @apply my-4 flex gap-4;
+    @apply my-4 flex flex-wrap gap-4;
 
     &-button {
-      @apply text-primary bg-third w-1/2 rounded-md py-2 text-xs font-semibold sm:text-sm;
+      @apply text-primary bg-third w-fit rounded-md p-2 text-xs font-semibold sm:text-sm;
     }
   }
 
   &-input {
-    @apply border-third w-full rounded-md border p-2;
+    @apply w-fit rounded-md md:w-[60%] lg:w-[58%];
   }
 
   &-image {
-    @apply before:from-fifth after:to-fifth relative hidden w-[612px]
-    overflow-hidden before:absolute before:inset-0 before:h-1/2 before:bg-gradient-to-b before:to-transparent
+    @apply before:from-fifth after:to-fifth relative hidden w-[612px] overflow-hidden before:absolute before:inset-0 before:h-1/2 before:bg-gradient-to-b before:to-transparent
 
     after:absolute after:inset-x-0 after:bottom-0 after:h-1/2 after:bg-gradient-to-b after:from-transparent lg:flex;
   }

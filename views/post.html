@@ -8,9 +8,9 @@
 
 	<section class="card-container">
 		<div class="col-span-2">
-			<div class="card-wrapper card-size-5">
+			<div class="card-wrapper card-size-7">
 				{% set thumbnailFile = model_relation(post, 'thumbnailFile') %}
-				<img alt="Image" class="card-image" src="{{ image_url(thumbnailFile) }}">
+				<img alt="Image" class="card-image hover:animate-none" src="{{ image_url(thumbnailFile) }}">
 
 				<div class="card-linear"></div>
 				<div class="card-content">
@@ -18,7 +18,7 @@
 					<a class="card-tag" href="{{ link_to(websiteTag) }}">{{ websiteTag.name }}</a>
 					{% endfor %}
 
-					<p class="card-title">{{ post.title }}</p>
+					<p class="post-title">{{ post.title }}</p>
 
 					<div class="flex flex-wrap gap-2 md:gap-0 justify-between">
 						<p class="card-info">

@@ -19,7 +19,7 @@
 
 		<div class="card-container-2" x-data="list('/ajax/top/year', true, 4)">
 			<template x-for="(post,index) in data">
-				<div class="card-wrapper-1">
+				<div class="card-wrapper-1 group">
 					<div class="relative w-[133px] h-[133px]">
 						<a :href="post.url">
 							<img :src="post.thumbnail_file_url" alt="Image" class="card-image-1">
@@ -32,12 +32,12 @@
 							<p class="card-title-2" x-text="post.title"></p>
 						</a>
 						<p class="card-info">
-							<svg class="card-date-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<svg class="card-date-icon-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path clip-rule="evenodd"
 												d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z"
 												fill-rule="evenodd"/>
 							</svg>
-							<span class="card-date" x-text="formatDate(post.created_at)"></span>
+							<span class="card-date-1" x-text="formatDate(post.created_at)"></span>
 						</p>
 					</div>
 

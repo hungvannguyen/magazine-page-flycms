@@ -116,7 +116,7 @@
       @apply bg-secondary fixed inset-0 z-50 flex w-[65%] flex-col gap-4 lg:hidden;
 
       &-wrapper {
-        @apply border-primary flex items-center justify-between border-b px-4 py-4;
+        @apply border-tenth flex items-center justify-between border-b px-4 py-4;
       }
 
       &-user {
@@ -143,7 +143,7 @@
         @apply first:mt-2;
 
         li {
-          @apply border-primary border-b;
+          @apply border-tenth border-b;
         }
       }
     }
@@ -154,10 +154,10 @@
       }
 
       &-menu {
-        @apply border-primary mr-1 flex flex-col border border-b-0;
+        @apply flex flex-col;
 
         a {
-          @apply text-primary hover:text-third flex items-center px-4 py-2 text-xs font-medium;
+          @apply text-primary border-tenth hover:text-third flex items-center border px-4 py-2 text-xs font-medium last:border-b-0;
         }
       }
     }

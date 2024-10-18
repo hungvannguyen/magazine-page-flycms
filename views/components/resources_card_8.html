@@ -1,14 +1,17 @@
 {% if resource %}
 
 {% set thumbnailFile = model_relation(resource, 'thumbnailFile')%}
-<div class="card-wrapper card-size-6">
+<div class="card-wrapper card-size-6 group">
+
+	<img alt="{{resource.title}}" class="card-image" src="{{ image_url( thumbnailFile ) }}">
+
 	<a href="{{link_post(resource)}}">
-		<img alt="{{resource.title}}" class="card-image" src="{{ image_url( thumbnailFile ) }}">
+		<div class="card-linear"></div>
 	</a>
-	<div class="card-linear"></div>
+
 	<div class="card-content">
 		{% for websiteTag in model_relation(resource, 'websiteTags') | slice(0,1) %}
-		<a class="card-tag" href="{{ link_to(websiteTag) }}">{{ websiteTag.name }}</a>
+		<a class="card-tag lg:text-xs xl:text-sm" href="{{ link_to(websiteTag) }}">{{ websiteTag.name }}</a>
 		{% endfor %}
 
 		<a href="{{link_post(resource)}}">

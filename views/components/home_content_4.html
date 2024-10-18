@@ -13,7 +13,7 @@
 
 		{% set resource = posts[0] %}
 		{% set thumbnailFile = model_relation(resource, 'thumbnailFile')%}
-		<div class="card-wrapper-2">
+		<div class="card-wrapper-2 group">
 
 			<a class="video-thumbnail" href="{{link_post(resource)}}">
 				<img alt="{{resource.title}}" class="card-image-3" src="{{ image_url( thumbnailFile ) }}">
@@ -27,13 +27,13 @@
 				</div>
 			</a>
 
-			<div class="card-content">
+			<div class="card-content-4">
 				{% for websiteTag in model_relation(resource, 'websiteTags') | slice(0,1) %}
 				<a class="card-tag-1" href="{{ link_to(websiteTag) }}">{{ websiteTag.name }}</a>
 				{% endfor %}
 
 				<a href="{{link_post(resource)}}">
-					<p class="card-title">{{resource.title}}</p>
+					<p class="card-title lg:text-2xl xl:text-[32px]">{{resource.title}}</p>
 				</a>
 
 				<p class="card-info">
@@ -51,11 +51,11 @@
 
 		<div class="divider"></div>
 
-		<div class="card-container-2">
+		<div class="card-container-7">
 
 			{% for resource in posts | slice(1, 3) %}
 			{% set thumbnailFile = model_relation(resource, 'thumbnailFile')%}
-			<div class="card-wrapper-3">
+			<div class="card-wrapper-3 pt-8 pb-7 md:py-0 group">
 
 				<a class="video-thumbnail" href="{{link_post(resource)}}">
 					<img alt="{{resource.title}}" class="card-image-4" src="{{ image_url( thumbnailFile ) }}">
