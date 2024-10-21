@@ -377,7 +377,7 @@ footer {
   @apply mt-1 hidden flex-col items-center gap-4 sm:flex;
 }
 .card-share-1 span {
-  @apply text-seventh text-xl font-medium;
+  @apply text-seventh text-base lg:text-xl font-medium;
 }
 .card-share-icon {
   @apply bg-fourth size-4 rounded-full p-1;
